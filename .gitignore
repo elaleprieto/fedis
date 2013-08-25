@@ -3,7 +3,7 @@ tmp/*
 app/tmp/*
 app/img/fotos/*
 app/[Cc]onfig/*
-app/Vendor/*.php
+app/Vendor/*
 app/webroot/.sass-cache/*
 !empty
 *.htaccess*
