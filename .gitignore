@@ -2,8 +2,7 @@ tmp/*
 [Cc]onfig/*
 app/tmp/*
 app/img/fotos/*
-app/[Cc]onfig/core.php
-app/[Cc]onfig/database.php
+app/[Cc]onfig/*
 app/Vendor/*.php
 app/webroot/.sass-cache/*
 !empty
@@ -12,7 +11,6 @@ app/webroot/.sass-cache/*
 
 # User specific & automatically generated files #
 #################################################
-/app/Config/database.php
 /app/tmp
 /lib/Cake/Console/Templates/skel/tmp/
 /plugins
