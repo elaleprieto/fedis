@@ -6,11 +6,20 @@ App::uses('Component', 'Controller');
 App::import('Vendor', 'kaltura/KalturaClient');
 
 class KalturaComponent extends Component {
-	
-	public $adminSecret = '1570499fc0443031b5e73b67c4730200';
-	public $partnerId = '1483331';
-	public $url = 'http://www.kaltura.com';
 	public $userId = 'admin';
+
+	# Kaltura.com
+	// public $adminSecret = '1570499fc0443031b5e73b67c4730200';
+	// public $partnerId = '1483331';
+	// public $url = 'http://www.kaltura.com';
+
+	# LibreKaltura.com.ar
+	// public $adminSecret = 'd826fc496bb8427d9465a9905e0493fd';
+	// public $partnerId = '106';
+	public $adminSecret = 'a5c1cb2c9bcd66b825db68533c3ec792';
+	public $partnerId = '99';
+	public $url = 'http://190.57.232.122';
+	
     	
 	public function getKalturaClient($partnerId = null, $adminSecret = null, $isAdmin = true, $url = '') {
 		
@@ -116,13 +125,25 @@ class KalturaComponent extends Component {
 		}
 		
 		return $partnerInfo;
-		
-		
+	}
+
+	public function getThumbs($entry_id = null) {
+		if($entry_id):
+			$kClient = $this->getKalturaClient();
+			
+			return $kClient->thumbAsset->getbyentryid($entry_id);
+		endif;
 	}
 
 
 	// public function getUrlEmbed($partnerId, $entry_id, $configId) {
-	public function getUrlEmbed($partnerId = null, $entry_id = '0_9oj2uhzo', $configId = '8847102') {
+			
+	# Kaltura.com	
+	// public function getUrlEmbed($partnerId = null, $entry_id = '0_9oj2uhzo', $configId = '8847102') {
+	
+	# LibreKaltura.com.ar	
+	// public function getUrlEmbed($partnerId = null, $entry_id = '0_i5u1lyhc', $configId = '11170242') {
+	public function getUrlEmbed($partnerId = null, $entry_id = '0_e0spw8jl', $configId = '11170242') {
 		
 		if(!$partnerId)
 			$partnerId = $this->partnerId;
