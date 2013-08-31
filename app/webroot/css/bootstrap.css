@@ -4160,7 +4160,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
   position: fixed;
   right: 0;
   left: 0;
-  border-width: 0 0 1px;
+  border-width: 0 0 3px;
 }
 
 @media (min-width: 768px) {
@@ -4491,7 +4491,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 
 .navbar-inverse {
   background-color: #222222;
-  border-color: #080808;
+  border-color: #FFAD33;
 }
 
 .navbar-inverse .navbar-brand {
@@ -6802,4 +6802,16 @@ td.visible-print {
   td.hidden-print {
     display: none !important;
   }
+}
+
+/**
+ * 	Estilos personales
+ */
+.masthead{
+	text-align: center;
+	padding-top: 25px;
+}
+
+.img-footer{
+	width: 10%;
 }

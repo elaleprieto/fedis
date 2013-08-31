@@ -104,10 +104,11 @@ p {
 	padding: 10px 20px 40px 20px;
 	overflow: auto;
 }
+
 #footer {
 	clear: both;
 	padding: 6px 10px;
-	text-align: right;
+	text-align: center;
 }
 
 /** containers **/
@@ -255,7 +256,7 @@ dd {
 
 /** Forms **/
 form {
-	clear: both;
+	/*clear: both;*/
 	margin-right: 20px;
 	padding: 0;
 	width: 95%;
@@ -285,7 +286,7 @@ fieldset fieldset div {
 form div {
 	clear: both;
 	margin-bottom: 1em;
-	padding: .5em;
+	/*padding: .5em;*/
 	vertical-align: text-top;
 }
 form .input {
