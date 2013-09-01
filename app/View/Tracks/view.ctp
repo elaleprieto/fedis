@@ -1,4 +1,21 @@
-<div class="tracks view">
+<div class="row">
+	<div class="col-sm-10 col-sm-offset-1 text-left">&nbsp;
+	</div>
+</div>
+	
+<div class="row">
+	<div class="col-sm-10 col-sm-offset-1 text-left">
+		<a href="/" class="btn btn-primary">&laquo; Volver</a>		
+	</div>
+</div>
+		
+<div class="row">
+	<div class="col-sm-12 text-center">
+		<?php echo $kUrlEmbed; ?>
+	</div>
+</div>
+
+<!-- <div class="tracks view">
 <h2><?php echo __('Track'); ?></h2>
 	<dl>
 		<dt><?php echo __('Id'); ?></dt>
@@ -308,4 +325,4 @@
 			<li><?php echo $this->Html->link(__('New Tag'), array('controller' => 'tags', 'action' => 'add')); ?> </li>
 		</ul>
 	</div>
-</div>
+</div> -->
