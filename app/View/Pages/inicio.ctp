@@ -105,7 +105,9 @@ echo $this->Html->css('inicio', null, array('inline' => false))
                 </div>
 				<div class="row text-center">
 					<div class="col-sm-12">
-						<img class="img-responsive img-rounded" src="http://placehold.it/350x150" />
+						<a href="/tracks/view/2">
+							<img class="img-responsive img-rounded" src="http://placehold.it/350x150" />
+						</a>
 					</div>
 				</div>
 				<br />
@@ -212,7 +214,7 @@ echo $this->Html->css('inicio', null, array('inline' => false))
 <footer class="row">
 	<div class="col-sm-1 col-sm-offset-4">
 		<?php 
-		echo  $this->Html->image('logo_federal.png', array('alt' => $cakeDescription, 'border' => '0', 'class'=>'img-responsive'));
+		echo  $this->Html->image('logo_federal.png', array('alt' => 'Federal Distribuciones', 'border' => '0', 'class'=>'img-responsive'));
 		?>
 	</div>
 	<div class="col-sm-3">
@@ -229,7 +231,7 @@ echo $this->Html->css('inicio', null, array('inline' => false))
 <!-- Logo superior -->
 <div class="col-sm-2 col-sm-offset-5 logo-superior">
 	<?php 
-		echo  $this->Html->image('logo_federal.png', array('alt' => $cakeDescription, 'border' => '0', 'class'=>'img-responsive'));
+		echo  $this->Html->image('logo_federal.png', array('alt' => 'Federal Distribuciones', 'border' => '0', 'class'=>'img-responsive'));
 	?>
 </div>
 		

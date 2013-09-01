@@ -21,40 +21,40 @@ $cakeDescription = __d('cake_dev', 'Federal Distribuciones');
 ?>
 <!DOCTYPE html>
 <html>
-<head>
-	<?php echo $this->Html->charset(); ?>
-	<title>
-		<?php echo $cakeDescription ?>:
-		<?php echo $title_for_layout; ?>
-	</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-	<?php
-		echo $this->Html->meta('icon');
-		echo $this->Html->css('bootstrap.min');
-		echo $this->fetch('meta');
-		echo $this->fetch('css');
-	?>
-
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="../../assets/js/html5shiv.js"></script>
-      <script src="../../assets/js/respond.min.js"></script>
-    <![endif]-->
+	<head>
+		<?php echo $this->Html->charset(); ?>
+		<title>
+			<?php echo $cakeDescription ?>:
+			<?php echo $title_for_layout; ?>
+		</title>
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
-	<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
-
-</head>
-<body>
-	<?php echo $this->Session->flash(); ?>
-
-	<?php echo $this->fetch('content'); ?>
-
-	<?php echo $this->element('sql_dump'); ?>
+		<?php
+			echo $this->Html->meta('icon');
+			echo $this->Html->css('bootstrap.min');
+			echo $this->fetch('meta');
+			echo $this->fetch('css');
+		?>
 	
-	<?php
-	echo $this->Html->script(array('//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js','bootstrap.min'));
-	echo $this->fetch('script');
-	?>
-</body>
+	    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	    <!--[if lt IE 9]>
+	      <script src="../../assets/js/html5shiv.js"></script>
+	      <script src="../../assets/js/respond.min.js"></script>
+	    <![endif]-->
+		
+		<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+	
+	</head>
+	<body>
+		<?php echo $this->Session->flash(); ?>
+	
+		<?php echo $this->fetch('content'); ?>
+	
+		<?php echo $this->element('sql_dump'); ?>
+		
+		<?php
+		echo $this->Html->script(array('//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js','bootstrap.min'));
+		echo $this->fetch('script');
+		?>
+	</body>
 </html>

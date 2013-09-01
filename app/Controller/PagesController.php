@@ -74,8 +74,8 @@ class PagesController extends AppController {
 		}
 		
 		// $kClient = $this->Kaltura->getKalturaClient();
-		$kPlayer = $this->Kaltura->embedPlayer(); 
-		$kUrlEmbed = $this->Kaltura->getUrlEmbed(); 
+		// $kPlayer = $this->Kaltura->embedPlayer(); 
+		// $kUrlEmbed = $this->Kaltura->getUrlEmbed(); 
 		
 		$this->set(compact('page', 'subpage', 'title_for_layout', 'kPlayer', 'kUrlEmbed'));
 		$this->render(implode('/', $path));
