@@ -6,7 +6,7 @@ a {
 /* line 6, ../sass/inicio.sass */
 body {
   background-color: #006e99;
-  background-image: url('/img/background.jpg?1378044102');
+  background-image: url('/img/background.jpg?1378044322');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   color: white;
@@ -31,9 +31,10 @@ footer {
 .carousel-inner > .item > img, .carousel-inner > .item > a > img {
   margin-left: auto;
   margin-right: auto;
+  float: none;
 }
 
-/* line 26, ../sass/inicio.sass */
+/* line 27, ../sass/inicio.sass */
 .logo-superior {
   margin-top: 15px;
   position: absolute;
@@ -41,18 +42,18 @@ footer {
   top: 0;
   z-index: 2000;
 }
-/* line 33, ../sass/inicio.sass */
+/* line 34, ../sass/inicio.sass */
 .logo-superior .img-responsive {
   width: 100px;
 }
 
-/* line 36, ../sass/inicio.sass */
+/* line 37, ../sass/inicio.sass */
 .navbar-inverse {
   border-bottom-color: #ff8640;
   border-bottom-width: 3px;
   color: #ff8640;
 }
-/* line 41, ../sass/inicio.sass */
+/* line 42, ../sass/inicio.sass */
 .navbar-inverse a {
   color: #ff8640;
 }

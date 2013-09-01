@@ -15,9 +15,11 @@ class KalturaComponent extends Component {
 
 	# LibreKaltura.com.ar
 	// public $adminSecret = 'd826fc496bb8427d9465a9905e0493fd';
-	// public $partnerId = '106';
-	public $adminSecret = 'a5c1cb2c9bcd66b825db68533c3ec792';
-	public $partnerId = '99';
+	public $adminSecret = '9d964723786318b4cd579f9b53d2e7e5'; # Usuario: Ale
+	public $partnerId = '106';
+	// public $adminSecret = 'a5c1cb2c9bcd66b825db68533c3ec792';
+	// public $partnerId = '99';
+	
 	public $url = 'http://190.57.232.122';
 	
     	
@@ -143,7 +145,7 @@ class KalturaComponent extends Component {
 	
 	# LibreKaltura.com.ar	
 	// public function getUrlEmbed($partnerId = null, $entry_id = '0_i5u1lyhc', $configId = '11170242') {
-	public function getUrlEmbed($partnerId = null, $entry_id = '0_e0spw8jl', $configId = '11170242') {
+	public function getUrlEmbed($entry_id = '0_e0spw8jl', $partnerId = null, $configId = '11170242') {
 		
 		if(!$partnerId)
 			$partnerId = $this->partnerId;

@@ -41,7 +41,7 @@ class TracksController extends AppController {
 		
 		if($entryId = $track['Track']['entryId']):
 			$kClient = $this->Kaltura->getKalturaClient();
-			$kUrlEmbed = $this->Kaltura->getUrlEmbed();
+			$kUrlEmbed = $this->Kaltura->getUrlEmbed($entryId);
 			$thumbs = $this->Kaltura->getThumbs($entryId);
 		else:
 			$kUrlEmbed = '';
