@@ -179,7 +179,7 @@ class KalturaComponent extends Component {
 			  name="video_'.$entry_id.'" 
 			  type="application/x-shockwave-flash" 
 			  height="'.$uiConf->height.'" 
-			  width="'.$uiConf->width.'" 
+			  width="100%" 
 			  allowFullScreen="true" 
 			  allowNetworking="all" 
 			  allowScriptAccess="always" 

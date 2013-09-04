@@ -1,4 +1,31 @@
-<div class="categories view">
+<div class="row">
+	<div class="col-sm-10 col-sm-offset-1 text-center">
+		<h1 class="category">
+			<span class="label label-default">
+				<?php echo $category['Category']['title'] ?>
+			</span>
+		</h1>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-sm-8 col-sm-offset-2">
+		<?php foreach ($category['Track'] as $track): ?>
+			<div class="col-sm-6">
+				<div class="col-sm-6">
+					<img class="img-responsive" src="http://placehold.it/350x170" />
+				</div>
+				<div class="col-sm-6">
+					<p><?php echo $track['title'] ?></p>
+					<p><?php echo $category['Category']['title'].' - '.$track['formato'] ?></p>
+					<p><?php echo $track['duracion'] ?></p>
+				</div>
+			</div>
+		<?php endforeach; ?>
+	</div>
+</div>
+
+<!-- <div class="categories view">
 <h2><?php echo __('Category'); ?></h2>
 	<dl>
 		<dt><?php echo __('Id'); ?></dt>
@@ -133,4 +160,4 @@
 			<li><?php echo $this->Html->link(__('New Track'), array('controller' => 'tracks', 'action' => 'add')); ?> </li>
 		</ul>
 	</div>
-</div>
+</div> -->

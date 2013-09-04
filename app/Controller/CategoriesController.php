@@ -41,6 +41,23 @@ class CategoriesController extends AppController {
 	}
 
 /**
+ * display method
+ *
+ * @throws NotFoundException
+ * @param string $category
+ * @return void
+ */
+	public function display($category = null) {
+		
+		if (!$category) {
+			throw new NotFoundException(__('Invalid category'));
+		}
+		$options = array('conditions' => array('Category.name' => $category));
+		$this->set('category', $this->Category->find('first', $options));
+		$this->render('view');
+	}
+
+/**
  * add method
  *
  * @return void

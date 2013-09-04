@@ -1,0 +1,82 @@
+@import colors, compass
+
+a
+	color: $white
+	
+	&:hover
+		color: $white
+
+body
+	// +background-image(linear-gradient(darken($azulOscuro, 20), $azul))
+	background-color: $azul
+	background-image: image-url('backgrounds/background.jpg')
+	background-repeat: no-repeat
+	// background-size: 100% 100%
+	+background-size(cover)
+	color: $white
+
+footer
+	margin-top: 50px
+
+h1.category
+	margin-top: -6px
+	
+	& > .label-default
+		background-color: black
+		color: $naranja
+		font-weight: normal
+
+.auspiciantes
+	margin-bottom: 30px
+
+.categories-menu
+	margin-bottom: 10px	
+
+.container-full
+	margin: 0 auto
+	width: 100%
+	min-height: 100%
+	overflow: hidden
+
+.logo-superior
+	margin-top: 110px
+	position: absolute
+	text-align: center
+	top: 0
+	z-index: 2000
+	
+	.img-responsive
+		width: 100px		
+
+.navbar-form
+	margin: 4px
+
+// .container-full a
+	// color: #efefef
+	// text-decoration: none
+
+.navbar-top
+	+background-image(linear-gradient($naranjaOscuro, $naranja))
+	background-color: $naranja
+	border-bottom-color: $naranjaOscuro
+	border-bottom-width: 10px
+	-moz-border-radius-bottomright: 70%
+	-webkit-border-bottom-right-radius: 70%
+	border-bottom-right-radius: 70%
+	-moz-border-radius-bottomleft: 70%
+	-webkit-border-bottom-left-radius: 70%
+	border-bottom-left-radius: 70%
+
+.navbar-out
+	background-color: $azul
+	border-bottom-color: $azul
+	border-bottom-width: 10px
+	-moz-border-radius-bottomright: 70%
+	-webkit-border-bottom-right-radius: 70%
+	border-bottom-right-radius: 70%
+	-moz-border-radius-bottomleft: 70%
+	-webkit-border-bottom-left-radius: 70%
+	border-bottom-left-radius: 70%
+	height: 90px
+	position: relative
+	z-index: 1000

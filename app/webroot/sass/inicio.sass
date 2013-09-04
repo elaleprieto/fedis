@@ -1,20 +1,4 @@
-@import colors
-
-a
-	color: $white
-
-body
-	background-color: $backgroundBody
-	background-image: image-url('background.jpg')
-	background-repeat: no-repeat
-	background-size: 100% 100%
-	color: $white
-
-footer
-	margin-top: 50px
-
-.black
-	background-color: $black
+@import colors, compass/css3
 
 .carousel-control.left, .carousel-control.right
 	background-image: none
@@ -24,20 +8,10 @@ footer
 	margin-right: auto
 	float: none
 
-.logo-superior
-	margin-top: 15px
-	position: absolute
-	text-align: center
-	top: 0
-	z-index: 2000
-	
-	.img-responsive
-		width: 100px		
-		
-.navbar-inverse
-	border-bottom-color: $naranja
-	border-bottom-width: 3px
-	color: $naranja 
-	
-	a
-		color: $naranja
+.video
+	background:
+		image: image-url('backgrounds/abstractBackgroundReverse.jpg')
+		repeat: no-repeat
+		position: top left
+	// +background-size(cover)
+	+background-size(100% 120%)
