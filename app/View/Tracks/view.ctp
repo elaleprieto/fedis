@@ -1,83 +1,104 @@
 <?php //debug($track) ?>
 
 <div class="row">
-	<div class="col-sm-10 col-sm-offset-1 text-center">
-		<h1 class="category">
-			<span class="label label-default">
-				<?php echo $track['Category'][0]['title'] ?>
-			</span>
-		</h1>
-	</div>
-</div>
-
-<!-- detalles del track -->
-<div class="row">
-	<div class="col-sm-8 col-sm-offset-2">
-		<div class="row">
-			<div class="col-sm-3">
-				<!-- <img class="img-responsive" src="http://placehold.it/340x370" /> -->
-				<?php
-				if(isset($thumbs) && sizeof($thumbs) > 0):
-					$thumb = $thumbs[0];
-					try	{
-						$thumb_url = $kClient->thumbAsset->serve($thumb->id);
-					} catch(Exception $ex) {
-						echo KajooHelper::getKalturaError(JText::_('Fail on geting thumb info'));
-					}
-				?>
-					<img class="img-responsive" src="<?php echo $thumb_url;?>" />
-				<?php
-				endif;
-				?>
-			</div>
-			<div class="col-sm-9">
-				<div class="row">
-					<strong>
-						<?php echo $track['Track']['title'] ?>
-					</strong>
-				</div>
-				<div class="row">
-					Formato: <?php echo $track['Track']['formato'] ?>
-				</div>
-				<div class="row">
-					Duración: <?php echo $track['Track']['duracion'] ?>
-				</div>
-				<div class="row">
-					Guión: <?php echo $track['Track']['guion'] ?>
-				</div>
-				<div class="row">
-					Dirección: <?php echo $track['Track']['director'] ?>
-				</div>
-				<div class="row">
-					Producción: <?php echo $track['Track']['productor'] ?>
-				</div>
-				<div class="row">
-					Contacto: <?php echo $track['Track']['contacto'] ?>
-				</div>
-				<div class="row">
-					Mail: <?php echo $track['Track']['mail_distribuidora'] ?>
-				</div>
-				<div class="row">
-					Teléfono: <?php echo $track['Track']['telefono'] ?>
-				</div>
-
-			</div>
+	<div class="col-sm-3 col-sm-offset-1">
+		<div class="col-sm-12">
+			<a href="/">
+				<img class="img-responsive logo-superior" src="/img/logos/logo_federal.png" />
+			</a>
+		</div>
+		<div class="col-sm-12">
+			<p>
+				Más de 500 horas de contenidos audiovisuales de Argentina.
+				<br />
+				Series y unitarios para tv.
+				<br />
+				Cortometrajes y largometrajes.
+				<br />
+				Todos realizados con calidad broadcasting internacional.
+			</p>
 		</div>
 	</div>
-</div>
+	<div class="col-sm-8">
+		<div class="row">
+			<div class="col-sm-10 col-sm-offset-1 text-right">
+				<h4 class="category">
+					[ <?php echo strtolower($track['Category'][0]['title']); ?> ]
+				</h4>
+			</div>
+		</div>
+		
 
-<div class="row">
-	<div class="col-sm-8 col-sm-offset-2">
-		<?php echo $kUrlEmbed; ?>
-	</div>
-</div>
-
-<div class="row">
-	<div class="col-sm-8 col-sm-offset-2">
-		Sinopsis
-	</div>
-	<div class="col-sm-8 col-sm-offset-2">
-		<?php echo $track['Track']['sinopsis_es'] ?>
+		<!-- detalles del track -->
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="row">
+					<div class="col-sm-3">
+						<img class="img-responsive" src="/img/thumbs/afiche.png" />
+						<?php
+						// if(isset($thumbs) && sizeof($thumbs) > 0):
+							// $thumb = $thumbs[0];
+							// try	{
+								// $thumb_url = $kClient->thumbAsset->serve($thumb->id);
+							// } catch(Exception $ex) {
+								// echo KajooHelper::getKalturaError(JText::_('Fail on geting thumb info'));
+							// }
+						?>
+							<!-- <img class="img-responsive" src="<?php echo $thumb_url;?>" /> -->
+						<?php
+						// endif;
+						?>
+					</div>
+					<div class="col-sm-9">
+						<div class="row">
+							<h3>
+								<?php echo $track['Track']['title'] ?>
+							</h3>
+						</div>
+						<div class="row">
+							<strong>Formato:</strong> <?php echo $track['Track']['formato'] ?>
+						</div>
+						<div class="row">
+							<strong>Duración:</strong> <?php echo $track['Track']['duracion'] ?>
+						</div>
+						<div class="row">
+							<strong>Guión:</strong> <?php echo $track['Track']['guion'] ?>
+						</div>
+						<div class="row">
+							<strong>Dirección:</strong> <?php echo $track['Track']['director'] ?>
+						</div>
+						<div class="row">
+							<strong>Producción:</strong> <?php echo $track['Track']['productor'] ?>
+						</div>
+						<div class="row">
+							<strong>Contacto:</strong> <?php echo $track['Track']['contacto'] ?>
+						</div>
+						<div class="row">
+							<strong>Mail:</strong> <?php echo $track['Track']['mail_distribuidora'] ?>
+						</div>
+						<div class="row">
+							<strong>Teléfono:</strong> <?php echo $track['Track']['telefono'] ?>
+						</div>
+		
+					</div>
+				</div>
+			</div>
+		</div>
+		<br />
+		<div class="row">
+			<div class="col-sm-10">
+				<?php echo $kUrlEmbed; ?>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-10">
+				<hr />
+				<p><strong>SINOPSIS</strong></p>
+			</div>
+			<div class="col-sm-10">
+				<?php echo $track['Track']['sinopsis_es'] ?>
+			</div>
+		</div>
 	</div>
 </div>
 

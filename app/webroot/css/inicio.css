@@ -1,16 +1,39 @@
 /* line 3, ../sass/inicio.sass */
-.carousel-control.left, .carousel-control.right {
-  background-image: none;
+h5 {
+  margin-bottom: 15px;
 }
 
-/* line 6, ../sass/inicio.sass */
+/* line 9, ../sass/inicio.sass */
+.carousel-indicators {
+  bottom: auto;
+  top: 20px;
+}
+
+/* line 13, ../sass/inicio.sass */
 .carousel-inner > .item > img, .carousel-inner > .item > a > img {
   margin-left: auto;
   margin-right: auto;
   float: none;
+  height: 300px;
+  max-height: 300px;
 }
 
-/* line 11, ../sass/inicio.sass */
+/* line 20, ../sass/inicio.sass */
+.carousel-caption {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0px, rgba(0, 0, 0, 0.5)), color-stop(100%, transparent));
+  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.5) 0px, transparent 100%);
+  background-image: -moz-linear-gradient(rgba(0, 0, 0, 0.5) 0px, transparent 100%);
+  background-image: -o-linear-gradient(rgba(0, 0, 0, 0.5) 0px, transparent 100%);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5) 0px, transparent 100%);
+  bottom: -15px;
+  left: 10%;
+  padding-left: 10px;
+  padding-right: 10px;
+  right: 10%;
+  width: 80%;
+}
+
+/* line 29, ../sass/inicio.sass */
 .video {
   background-image: url('/img/backgrounds/abstractBackgroundReverse.jpg?1378255690');
   background-repeat: no-repeat;

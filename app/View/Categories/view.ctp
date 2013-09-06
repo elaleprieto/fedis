@@ -1,27 +1,77 @@
-<div class="row">
-	<div class="col-sm-10 col-sm-offset-1 text-center">
-		<h1 class="category">
-			<span class="label label-default">
-				<?php echo $category['Category']['title'] ?>
-			</span>
-		</h1>
-	</div>
-</div>
+<?php
+echo $this->Html->css('categories/view', null, array('inline' => false));
+?>
 
 <div class="row">
-	<div class="col-sm-8 col-sm-offset-2">
-		<?php foreach ($category['Track'] as $track): ?>
-			<div class="col-sm-6">
-				<div class="col-sm-6">
-					<img class="img-responsive" src="http://placehold.it/350x170" />
-				</div>
-				<div class="col-sm-6">
-					<p><?php echo $track['title'] ?></p>
-					<p><?php echo $category['Category']['title'].' - '.$track['formato'] ?></p>
-					<p><?php echo $track['duracion'] ?></p>
-				</div>
+	<div class="col-sm-3 col-sm-offset-1">
+		<div class="col-sm-12">
+			<a href="/">
+				<img class="img-responsive logo-superior" src="/img/logos/logo_federal.png" />
+			</a>
+		</div>
+		<div class="col-sm-12">
+			<p>
+				Más de 500 horas de contenidos audiovisuales de Argentina.
+				<br />
+				Series y unitarios para tv.
+				<br />
+				Cortometrajes y largometrajes.
+				<br />
+				Todos realizados con calidad broadcasting internacional.
+			</p>
+		</div>
+	</div>
+	<div class="col-sm-8">
+		<div class="row">
+			<div class="col-sm-10 col-sm-offset-1 text-right">
+				<h4 class="category">
+					[ <?php echo strtolower($category['Category']['title']); ?> ]
+				</h4>
 			</div>
-		<?php endforeach; ?>
+		</div>
+		
+		<div class="row">
+			<div class="col-sm-12">
+				<?php 
+				$i = 0;
+				foreach ($category['Track'] as $track): ?>
+					<?php if($i % 2 == 0) echo '<div class="row">' ?>
+						<div class="col-sm-6">
+							<div class="row">
+								<div class="col-sm-6">
+									<?php
+									// echo $this->Html->link($this->Html->image('http://placehold.it/350x170'
+											// , array('class' => 'img-responsive')
+											// )
+										// , array('controller' => 'tracks', 'action' => 'view', $track['id'])
+										// , array('escape' => false)
+									// );
+									?>
+									<a href="/tracks/view/2">
+										<img class="col-sm-12 img-responsive img-rounded" src="/img/thumbs/ficcion1.jpg" /> 
+									</a>
+									<!-- <img class="img-responsive" src="http://placehold.it/350x170" /> -->
+								</div>
+								<div class="col-sm-6">
+									<h5><?php echo $track['title']; ?></h5>
+									<p>
+										<?php echo $category['Category']['title'] . ' - ' . $track['formato']; ?>
+										<br />
+										<?php echo $track['duracion']; ?>
+									</p>
+								</div>
+							</div>
+						</div>
+					<?php if($i % 2 == 1) echo '</div>' ?>
+				<?php 
+					$i++;
+				endforeach;
+				// ver
+				// # si i es par es porque la cantidad de tracks es impar => hay que cerrar la row
+				// if($i % 2 == 0) echo '</div>' 
+				?>
+			</div>
+		</div>
 	</div>
 </div>
 

@@ -52,25 +52,18 @@ $cakeDescription = __d('cake_dev', 'Federal Distribuciones');
 			    <ul class="nav navbar-nav  col-sm-12 text-center">
 	
 			        <!-- Redes Sociales -->
-			        <li class="col-sm-5 col-sm-offset-1">
-			        	<form class="navbar-form text-left" role="search">
+			        <li class="col-sm-12 text-center">
+			        	<form class="navbar-form text-center" role="search">
 							<i class="icon-facebook-sign icon-2x"></i>
 				        	<i class="icon-twitter-sign icon-2x"></i>
-			    		</form>
-			        </li>
-			        
-			        <!-- Buscar -->
-			        <li class="col-sm-5">
-			        	<form class="navbar-form pull-right" role="search">
-		            		<input type="text" class="form-control" placeholder="buscar...">
 			    		</form>
 			        </li>
 			    </ul>
 				
 				<!-- MENU 2 :: Categorías -->
-				<div>
-				    <div class="col-sm-8 col-lg-6 col-sm-offset-2 col-lg-offset-3">
-				        <div class="row categories-menu">
+				<!-- <div>
+				    <div class="col-sm-12 col-lg-8 col-lg-offset-2">
+				        <div class="row categories-menu"> -->
 				            <!-- <ul class="nav nav-pills nav-justified">
 				                <li>
 				                    <a href="/ficcion">ficción</a>
@@ -91,24 +84,60 @@ $cakeDescription = __d('cake_dev', 'Federal Distribuciones');
 				                    <a href="#">contacto</a>
 				                </li>
 				            </ul> -->
-				                <div class="col-sm-2 text-center">
-				                    <a href="/ficcion">ficción</a>
+				                <!-- <div class="col-sm-1 text-center">
+				                    <a href="/">inicio</a>
+				                </div>
+				                <div class="col-sm-1 text-center">
+				                    <a href="/ficcion">[ ficción ]</a>
 				                </div>
 				                <div class="col-sm-2 text-center">
-				                    <a href="/documental">documental</a>
+				                    <a href="/documental">[ documental ]</a>
 				                </div>
 				                <div class="col-sm-2 text-center">
-				                    <a href="/animacion">animación</a>
+				                    <a href="/animacion">[ animación ]</a>
 				                </div>
 				                <div class="col-sm-2 text-center">
-				                    <a href="/cortos">cortos</a>
+				                    <a href="/cortos">[ cortos ]</a>
 				                </div>
-				                <div class="col-sm-3 text-center">
+				                <div class="col-sm-2 text-center">
 				                    <a href="#">quienes somos</a>
 				                </div>
 				                <div class="col-sm-1 text-center">
 				                    <a href="#">contacto</a>
 								</div>
+				                <div class="col-sm-1 text-center">
+				                    <a href="http://200.110.135.125/~federal/site" target="_blank">Inscripción</a>
+				                </div>
+				        </div>
+				    </div>
+				</div> -->
+				<div>
+				    <div class="col-sm-12">
+				        <div class="row categories-menu text-center">
+			                <span>
+			                    <a href="/">inicio</a>
+			                </span>
+			                <span>
+			                    <a href="/ficcion">[ ficción ]</a>
+			                </span>
+			                <span>
+			                    <a href="/documental">[ documental ]</a>
+			                </span>
+			                <span>
+			                    <a href="/animacion">[ animación ]</a>
+			                </span>
+			                <span>
+			                    <a href="/cortos">[ cortos ]</a>
+			                </span>
+			                <span>
+			                    <a href="#">quienes somos</a>
+			                </span>
+			                <span>
+			                    <a href="#">contacto</a>
+			                </span>
+			                <span>
+			                    <a href="http://200.110.135.125/~federal/site" target="_blank">Inscripción</a>
+			                </span>
 				        </div>
 				    </div>
 				</div>
@@ -122,9 +151,11 @@ $cakeDescription = __d('cake_dev', 'Federal Distribuciones');
 			<footer class="row">
 				<!-- Logos de auspiciantes -->
 				<div class="row auspiciantes">
-					<div class="col-sm-2 col-sm-offset-3 text-center">
-						<img class="img-responsive" src="http://placehold.it/350x70" />
-						INCAA
+					<div class="col-sm-1 col-sm-offset-4 text-center">
+						<?php 
+						echo  $this->Html->image('logos/logo-incaa.jpg'
+							, array('alt' => 'INCAA', 'border' => '0', 'class' => 'img-responsive'));
+						?>
 					</div>
 					<div class="col-sm-2 text-center">
 						<?php 
@@ -140,11 +171,73 @@ $cakeDescription = __d('cake_dev', 'Federal Distribuciones');
 					</div>
 				</div>
 				
+				<!-- MENU 3 :: Categorías footer -->
+				<!-- <div>
+				    <div class="col-sm-12 col-lg-12">
+				        <div class="row categories-menu">
+				                <div class="col-sm-1 text-center">
+				                    <a href="/">inicio</a>
+				                </div>
+				                <div class="col-sm-1 text-center">
+				                    <a href="/ficcion">[ ficción ]</a>
+				                </div>
+				                <div class="col-sm-2 text-center">
+				                    <a href="/documental">[ documental ]</a>
+				                </div>
+				                <div class="col-sm-2 text-center">
+				                    <a href="/animacion">[ animación ]</a>
+				                </div>
+				                <div class="col-sm-2 text-center">
+				                    <a href="/cortos">[ cortos ]</a>
+				                </div>
+				                <div class="col-sm-2 text-center">
+				                    <a href="#">quienes somos</a>
+				                </div>
+				                <div class="col-sm-1 text-center">
+				                    <a href="#">contacto</a>
+								</div>
+				                <div class="col-sm-1 text-center">
+				                    <a href="http://200.110.135.125/~federal/site" target="_blank">Inscripción</a>
+								</div>
+				        </div>
+				    </div>
+				</div> -->
+				<div>
+				    <div class="col-sm-12">
+				        <div class="row categories-menu text-center">
+			                <span>
+			                    <a href="/">inicio</a>
+			                </span>
+			                <span>
+			                    <a href="/ficcion">[ ficción ]</a>
+			                </span>
+			                <span>
+			                    <a href="/documental">[ documental ]</a>
+			                </span>
+			                <span>
+			                    <a href="/animacion">[ animación ]</a>
+			                </span>
+			                <span>
+			                    <a href="/cortos">[ cortos ]</a>
+			                </span>
+			                <span>
+			                    <a href="#">quienes somos</a>
+			                </span>
+			                <span>
+			                    <a href="#">contacto</a>
+			                </span>
+			                <span>
+			                    <a href="http://200.110.135.125/~federal/site" target="_blank">Inscripción</a>
+			                </span>
+				        </div>
+				    </div>
+				</div>
+				
 				<!-- Logo de federal distribuciones -->
 				<div class="row">
 					<div class="col-sm-1 col-sm-offset-4">
 						<?php 
-						echo  $this->Html->image('logo_federal.png'
+						echo  $this->Html->image('logos/logo_federal.png'
 							, array('alt' => 'Federal Distribuciones', 'border' => '0', 'class'=>'img-responsive'));
 						?>
 					</div>
@@ -162,14 +255,14 @@ $cakeDescription = __d('cake_dev', 'Federal Distribuciones');
 		</div>
 		
 		<!-- Logo superior (3d) -->
-		<div class="col-sm-1 col-sm-offset-1 logo-superior">
-			<a href="/"><img src="/img/logo_federal.png" border="0" class="img-responsive" /></a>
+		<!-- <div class="col-sm-1 col-sm-offset-1 logo-superior">
+			<a href="/"><img src="/img/logo_federal.png" border="0" class="img-responsive" /></a> -->
 				<?php 
 					// echo $this->Html->image('logo_federal.png'
 						// , array('alt' => 'Federal Distribuciones', 'border' => '0', 'class'=>'img-responsive')
 					// );
 				?>
-		</div>
+		<!-- </div> -->
 
 
 		<?php echo $this->element('sql_dump'); ?>
