@@ -10,7 +10,7 @@ class TracksController extends AppController {
 
 	public function beforeFilter() {
         parent::beforeFilter();
-        $this -> Auth -> allow('view');
+        $this -> Auth -> allow('view', 'add', 'index');
     }
 
 /**
@@ -70,9 +70,26 @@ class TracksController extends AppController {
 				$this->Session->setFlash(__('The track could not be saved. Please, try again.'));
 			}
 		}
+		
 		$categories = $this->Track->Category->find('list');
 		$tags = $this->Track->Tag->find('list');
-		$this->set(compact('categories', 'tags'));
+		
+		$kClient = $this->Kaltura->getKalturaClient();
+			
+		# Filtro
+		$filter = new KalturaMediaEntryFilter();
+		$filter->mediaTypeEqual = 1; //only sync videos
+		
+		# Paginacion
+		$pager = new KalturaFilterPager();
+		$pager->pageSize = 1000;
+		$pager->pageIndex = 1;
+		
+		# Listar
+		$listado = $kClient->media->listAction($filter, $pager);
+		
+		
+		$this->set(compact('categories', 'listado', 'tags'));
 	}
 
 /**
