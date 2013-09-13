@@ -1,11 +1,19 @@
 <div class="tracks index">
-	<h2><?php echo __('Tracks'); ?></h2>
-	<table cellpadding="0" cellspacing="0">
+	<div class="row">
+		<div class="col-sm-12">
+			<a href="/cargador" class="btn btn-primary pull-right">
+				Cargador
+			</a>
+		</div>
+	</div>
+	
+	<h2><?php echo __('Listado'); ?></h2>
+	<table class="table" cellpadding="0" cellspacing="0">
 	<tr>
-			<th><?php echo $this->Paginator->sort('id'); ?></th>
-			<th><?php echo $this->Paginator->sort('catalogoId'); ?></th>
-			<th><?php echo $this->Paginator->sort('title'); ?></th>
-			<th><?php echo $this->Paginator->sort('titulo'); ?></th>
+			<!-- <th><?php echo $this->Paginator->sort('id'); ?></th> -->
+			<th><?php echo $this->Paginator->sort('catalogoId', 'Catálogo ID'); ?></th>
+			<th><?php echo $this->Paginator->sort('title', 'Título'); ?></th>
+			<!-- <th><?php echo $this->Paginator->sort('titulo'); ?></th>
 			<th><?php echo $this->Paginator->sort('formato'); ?></th>
 			<th><?php echo $this->Paginator->sort('presentacion'); ?></th>
 			<th><?php echo $this->Paginator->sort('capitulos'); ?></th>
@@ -29,17 +37,17 @@
 			<th><?php echo $this->Paginator->sort('sinopsis_en'); ?></th>
 			<th><?php echo $this->Paginator->sort('sinopsis_po'); ?></th>
 			<th><?php echo $this->Paginator->sort('created'); ?></th>
-			<th><?php echo $this->Paginator->sort('modified'); ?></th>
-			<th><?php echo $this->Paginator->sort('entryId'); ?></th>
-			<th class="actions"><?php echo __('Actions'); ?></th>
+			<th><?php echo $this->Paginator->sort('modified'); ?></th> -->
+			<th><?php echo $this->Paginator->sort('entryId', 'Video ID'); ?></th>
+			<th class="actions"><!-- <?php echo __('Actions'); ?> --></th>
 	</tr>
 	<?php foreach ($tracks as $track): ?>
 	<tr>
-		<td><?php echo h($track['Track']['id']); ?>&nbsp;</td>
+		<!-- <td><?php echo h($track['Track']['id']); ?>&nbsp;</td> -->
 		<td><?php echo h($track['Track']['catalogoId']); ?>&nbsp;</td>
 		<td><?php echo h($track['Track']['title']); ?>&nbsp;</td>
-		<td><?php echo h($track['Track']['titulo']); ?>&nbsp;</td>
-		<td><?php echo h($track['Track']['formato']); ?>&nbsp;</td>
+		<!-- <td><?php echo h($track['Track']['titulo']); ?>&nbsp;</td> -->
+		<!-- <td><?php echo h($track['Track']['formato']); ?>&nbsp;</td>
 		<td><?php echo h($track['Track']['presentacion']); ?>&nbsp;</td>
 		<td><?php echo h($track['Track']['capitulos']); ?>&nbsp;</td>
 		<td><?php echo h($track['Track']['duracion']); ?>&nbsp;</td>
@@ -62,39 +70,33 @@
 		<td><?php echo h($track['Track']['sinopsis_en']); ?>&nbsp;</td>
 		<td><?php echo h($track['Track']['sinopsis_po']); ?>&nbsp;</td>
 		<td><?php echo h($track['Track']['created']); ?>&nbsp;</td>
-		<td><?php echo h($track['Track']['modified']); ?>&nbsp;</td>
+		<td><?php echo h($track['Track']['modified']); ?>&nbsp;</td> -->
 		<td><?php echo h($track['Track']['entryId']); ?>&nbsp;</td>
-		<td class="actions">
-			<?php echo $this->Html->link(__('View'), array('action' => 'view', $track['Track']['id'])); ?>
-			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $track['Track']['id'])); ?>
-			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $track['Track']['id']), null, __('Are you sure you want to delete # %s?', $track['Track']['id'])); ?>
+		<td class="actions col-sm-1">
+			<!-- <?php echo $this->Html->link(__('View'), array('action' => 'view', $track['Track']['id'])); ?> -->
+			<?php echo $this->Html->link(__('Editar'), Router::url('/editar/' . $track['Track']['id']), array('class'=>'btn btn-primary')); ?>
+			<!-- <?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $track['Track']['id']), null, __('Are you sure you want to delete # %s?', $track['Track']['id'])); ?> -->
 		</td>
 	</tr>
 <?php endforeach; ?>
 	</table>
-	<p>
-	<?php
-	echo $this->Paginator->counter(array(
-	'format' => __('Page {:page} of {:pages}, showing {:current} records out of {:count} total, starting on record {:start}, ending on {:end}')
-	));
-	?>	</p>
-	<div class="paging">
-	<?php
-		echo $this->Paginator->prev('< ' . __('previous'), array(), null, array('class' => 'prev disabled'));
-		echo $this->Paginator->numbers(array('separator' => ''));
-		echo $this->Paginator->next(__('next') . ' >', array(), null, array('class' => 'next disabled'));
-	?>
-	</div>
-</div>
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
-		<li><?php echo $this->Html->link(__('New Track'), array('action' => 'add')); ?></li>
-		<li><?php echo $this->Html->link(__('List Awards'), array('controller' => 'awards', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Award'), array('controller' => 'awards', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Categories'), array('controller' => 'categories', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Category'), array('controller' => 'categories', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Tags'), array('controller' => 'tags', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Tag'), array('controller' => 'tags', 'action' => 'add')); ?> </li>
-	</ul>
+	
+	<?php if(sizeof($tracks) > 20): ?>
+		<div class="row">
+			<div class="col-sm-12 text-center">
+				<p>
+					<?php
+					echo $this->Paginator->counter(array('format' => __('Página {:page} de {:pages}')));
+					?>	
+				</p>
+				<div class="paging">
+					<?php
+					echo $this->Paginator->prev('< ' . __('anterior'), array(), null, array('class' => 'prev disabled'));
+					echo $this->Paginator->numbers(array('separator' => ' | '));
+					echo $this->Paginator->next(__('siguiente') . ' >', array(), null, array('class' => 'next disabled'));
+					?>
+				</div>
+			</div>
+		</div>
+	<?php endif; ?>
 </div>

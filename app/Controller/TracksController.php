@@ -10,7 +10,7 @@ class TracksController extends AppController {
 
 	public function beforeFilter() {
         parent::beforeFilter();
-        $this -> Auth -> allow('view', 'add', 'index');
+        $this -> Auth -> allow('add', 'edit', 'index', 'view');
     }
 
 /**
@@ -62,10 +62,12 @@ class TracksController extends AppController {
  */
 	public function add() {
 		if ($this->request->is('post')) {
+			$track = $this->request->data;
+			$track['titulo'] = $track['Track']['title'];
 			$this->Track->create();
-			if ($this->Track->save($this->request->data)) {
+			if ($this->Track->save($track)) {
 				$this->Session->setFlash(__('The track has been saved'));
-				return $this->redirect(array('action' => 'index'));
+				// return $this->redirect(array('action' => 'add'));
 			} else {
 				$this->Session->setFlash(__('The track could not be saved. Please, try again.'));
 			}
@@ -86,10 +88,11 @@ class TracksController extends AppController {
 		$pager->pageIndex = 1;
 		
 		# Listar
-		$listado = $kClient->media->listAction($filter, $pager);
+		$kalturaList = $kClient->media->listAction($filter, $pager); # videos en el servidor de Kaltura
+		$this->Track->recursive = -1;
+		$addedList = $this->Track->find('all', array('fields'=>'entryId')); # videos ya linkeados
 		
-		
-		$this->set(compact('categories', 'listado', 'tags'));
+		$this->set(compact('addedList', 'categories', 'kalturaList', 'tags'));
 	}
 
 /**
@@ -104,9 +107,11 @@ class TracksController extends AppController {
 			throw new NotFoundException(__('Invalid track'));
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
-			if ($this->Track->save($this->request->data)) {
+			$track = $this->request->data;
+			$track['titulo'] = $track['Track']['title'];
+			if ($this->Track->save($track)) {
 				$this->Session->setFlash(__('The track has been saved'));
-				return $this->redirect(array('action' => 'index'));
+				return $this->redirect(Router::url('/listado'));
 			} else {
 				$this->Session->setFlash(__('The track could not be saved. Please, try again.'));
 			}
@@ -116,7 +121,25 @@ class TracksController extends AppController {
 		}
 		$categories = $this->Track->Category->find('list');
 		$tags = $this->Track->Tag->find('list');
-		$this->set(compact('categories', 'tags'));
+		// $this->set(compact('categories', 'tags'));
+		
+		$kClient = $this->Kaltura->getKalturaClient();
+			
+		# Filtro
+		$filter = new KalturaMediaEntryFilter();
+		$filter->mediaTypeEqual = 1; //only sync videos
+		
+		# Paginacion
+		$pager = new KalturaFilterPager();
+		$pager->pageSize = 1000;
+		$pager->pageIndex = 1;
+		
+		# Listar
+		$kalturaList = $kClient->media->listAction($filter, $pager); # videos en el servidor de Kaltura
+		$this->Track->recursive = -1;
+		$addedList = $this->Track->find('all', array('fields'=>'entryId')); # videos ya linkeados
+		
+		$this->set(compact('addedList', 'categories', 'kalturaList', 'tags'));
 	}
 
 /**

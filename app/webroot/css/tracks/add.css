@@ -1,4 +1,10 @@
-/* line 1, ../../sass/tracks/add.sass */
+/* line 5, ../../sass/tracks/add.sass */
 .datos .row {
   margin-bottom: 10px;
+}
+
+/* line 8, ../../sass/tracks/add.sass */
+.highlight {
+  background-color: yellow;
+  color: black;
 }
