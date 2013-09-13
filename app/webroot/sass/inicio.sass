@@ -1,5 +1,6 @@
 @import colors, compass/css3
 
+
 h5
 	margin-bottom: 15px
 
@@ -33,3 +34,17 @@ h5
 		position: top left
 	// +background-size(cover)
 	+background-size(100% 120%)
+	
+.videoRow
+	+single-box-shadow(#000000)
+	border: 1px solid #000
+	+background-image(linear-gradient(transparent 30%, darken($azulOscuro, 20%) 85%, darken($azulOscuro, 20%) 100%))
+	// background-color: darken($azulOscuro, 10%)
+	
+.videoText
+	padding: 10px 0
+	font-family: 'Dosis', sans-serif
+	// background-color: darken($azulOscuro, 15%)
+	
+.videoThumb
+	padding: 10px 0

@@ -1,14 +1,12 @@
 <?php
-echo $this->Html->css('inicio', null, array('inline' => false));
+echo $this->Html->css(array('inicio', 'http://fonts.googleapis.com/css?family=Dosis'), null, array('inline' => false));
 ?>
 
 <!-- Carousel Video -->
 <div class="row">
 	<div class="col-sm-3 col-sm-offset-1">
 		<div class="col-sm-12">
-			<a href="/">
-				<img class="img-responsive logo-superior" src="/img/logos/logo_federal.png" />
-			</a>
+			<a href="/"> <img class="img-responsive logo-superior" src="/img/logos/logo_federal.png" /> </a>
 		</div>
 		<div class="col-sm-12">
 			<p>
@@ -60,129 +58,197 @@ echo $this->Html->css('inicio', null, array('inline' => false));
 		<div class="row">
 			<div class="col-sm-3">
 				<div class="row text-center">
-					<h5>
-						<a href="/ficcion">
-							[ ficción ]
-						</a>
-					</h5>
+					<h5><a href="/ficcion"> [ ficción ] </a></h5>
 				</div>
-				<div class="row text-center">
-					<div class="col-sm-12">
-						<a href="/tracks/view/2">
-							<img class="col-sm-12 img-responsive img-rounded" src="/img/thumbs/ficcion1.jpg" />
-						</a>
+				<div class="row text-center ">
+					<div class="col-sm-11 col-sm-offset-1 videoRow">
+						<div class="row text-center videoThumb">
+							<div class="col-sm-12">
+								<a href="/tracks/view/2"> <img class="col-sm-12 img-responsive img-rounded" src="/img/thumbs/ficcion1.jpg" /> </a>
+							</div>
+						</div>
+						<div class="row text-center">
+							<div class="col-sm-12 videoText" >
+								<span>BIEN DE FAMILIA</span>
+							</div>
+						</div>
 					</div>
 				</div>
 				<br />
-				<div class="row text-center">
-					<div class="col-sm-12">
-						<a href="/tracks/view/2">
-							<img class="col-sm-12 img-responsive img-rounded" src="/img/thumbs/ficcion2.jpg" />
-						</a>
+				<div class="row text-center ">
+					<div class="col-sm-11 col-sm-offset-1 videoRow">
+						<div class="row text-center videoThumb">
+							<div class="col-sm-12">
+								<a href="/tracks/view/2"> <img class="col-sm-12 img-responsive img-rounded" src="/img/thumbs/ficcion2.jpg" /> </a>
+							</div>
+						</div>
+						<div class="row text-center">
+							<div class="col-sm-12 videoText" >
+								<span>PEDRO</span>
+							</div>
+						</div>
 					</div>
 				</div>
 				<br />
-				<div class="row text-center">
-					<div class="col-sm-12">
-						<a href="/tracks/view/2">
-							<img class="col-sm-12 img-responsive img-rounded" src="/img/thumbs/ficcion3.jpg" />
-						</a>
+				<div class="row text-center ">
+					<div class="col-sm-11 col-sm-offset-1 videoRow">
+						<div class="row text-center videoThumb">
+							<div class="col-sm-12">
+								<a href="/tracks/view/2"> <img class="col-sm-12 img-responsive img-rounded" src="/img/thumbs/ficcion3.jpg" /> </a>
+							</div>
+						</div>
+						<div class="row text-center">
+							<div class="col-sm-12 videoText" >
+								<span>SALVATIERRA</span>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
 			<div class="col-sm-3">
 				<div class="row text-center">
-					<h5>
-						<a href="/documental">
-							[ documental ]
-						</a>
-					</h5>
+					<h5><a href="/documental"> [ documental ] </a></h5>
 				</div>
-				<div class="row text-center">
-					<div class="col-sm-12">
-						<a href="/tracks/view/2">
-							<img class="col-sm-12 img-responsive img-rounded" src="/img/thumbs/documental1.jpg" />
-						</a>
+				<div class="row text-center ">
+					<div class="col-sm-11 col-sm-offset-1 videoRow">
+						<div class="row text-center videoThumb">
+							<div class="col-sm-12">
+								<a href="/tracks/view/2"> <img class="col-sm-12 img-responsive img-rounded" src="/img/thumbs/documental1.jpg" /> </a>
+							</div>
+						</div>
+						<div class="row text-center">
+							<div class="col-sm-12 videoText" >
+								<span>LA NOCTURNA</span>
+							</div>
+						</div>
 					</div>
 				</div>
 				<br />
-				<div class="row text-center">
-					<div class="col-sm-12">
-						<a href="/tracks/view/2">
-							<img class="col-sm-12 img-responsive img-rounded" src="/img/thumbs/documental2.jpg" />
-						</a>
+				<div class="row text-center ">
+					<div class="col-sm-11 col-sm-offset-1 videoRow">
+						<div class="row text-center videoThumb">
+							<div class="col-sm-12">
+								<a href="/tracks/view/2"> <img class="col-sm-12 img-responsive img-rounded" src="/img/thumbs/documental2.jpg" /> </a>
+							</div>
+						</div>
+						<div class="row text-center">
+							<div class="col-sm-12 videoText" >
+								<span>VIVIENDO EN CASA</span>
+							</div>
+						</div>
 					</div>
 				</div>
 				<br />
-				<div class="row text-center">
-					<div class="col-sm-12">
-						<a href="/tracks/view/2">
-							<img class="col-sm-12 img-responsive img-rounded" src="/img/thumbs/documental3.jpg" />
-						</a>
+				<div class="row text-center ">
+					<div class="col-sm-11 col-sm-offset-1 videoRow">
+						<div class="row text-center videoThumb">
+							<div class="col-sm-12">
+								<a href="/tracks/view/2"> <img class="col-sm-12 img-responsive img-rounded" src="/img/thumbs/documental3.jpg" /> </a>
+							</div>
+						</div>
+						<div class="row text-center">
+							<div class="col-sm-12 videoText" >
+								<span>VUELVE CON ÉL</span>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
 			<div class="col-sm-3">
 				<div class="row text-center">
-					<h5>
-						<a href="/animacion">
-							[ animación ]
-						</a>
-					</h5>
+					<h5><a href="/animacion"> [ animación ] </a></h5>
 				</div>
 				<div class="row text-center">
-					<div class="col-sm-12">
-						<a href="/tracks/view/2">
-							<img class="col-sm-12 img-responsive img-rounded" src="/img/thumbs/animacion1.jpg" />
-						</a>
+					<div class="col-sm-11 col-sm-offset-1 videoRow">
+						<div class="row text-center videoThumb">
+							<div class="col-sm-12">
+								<a href="/tracks/view/2"> <img class="col-sm-12 img-responsive img-rounded" src="/img/thumbs/animacion1.jpg" /> </a>
+							</div>
+						</div>
+						<div class="row text-center">
+							<div class="col-sm-12 videoText" >
+								<span>SOLTEROS</span>
+							</div>
+						</div>
 					</div>
 				</div>
 				<br />
 				<div class="row text-center">
-					<div class="col-sm-12">
-						<a href="/tracks/view/2">
-							<img class="col-sm-12 img-responsive img-rounded" src="/img/thumbs/animacion2.jpg" />
-						</a>
+					<div class="col-sm-11 col-sm-offset-1 videoRow">
+						<div class="row text-center videoThumb">
+							<div class="col-sm-12">
+								<a href="/tracks/view/2"> <img class="col-sm-12 img-responsive img-rounded" src="/img/thumbs/animacion2.jpg" /> </a>
+							</div>
+						</div>
+						<div class="row text-center">
+							<div class="col-sm-12 videoText" >
+								<span>EN FUGA</span>
+							</div>
+						</div>
 					</div>
 				</div>
 				<br />
-				<div class="row text-center">
-					<div class="col-sm-12">
-						<a href="/tracks/view/2">
-							<img class="col-sm-12 img-responsive img-rounded" src="/img/thumbs/animacion3.jpg" />
-						</a>
+				<div class="row text-center ">
+					<div class="col-sm-11 col-sm-offset-1 videoRow">
+						<div class="row text-center videoThumb">
+							<div class="col-sm-12">
+								<a href="/tracks/view/2"> <img class="col-sm-12 img-responsive img-rounded" src="/img/thumbs/animacion3.jpg" /> </a>
+							</div>
+						</div>
+						<div class="row text-center">
+							<div class="col-sm-12 videoText" >
+								<span>NATURALEZA VIVA</span>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
 			<div class="col-sm-3">
 				<div class="row text-center">
-					<h5>
-						<a href="/cortos">
-							[ cortometraje ]
-						</a>
-					</h5>
+					<h5><a href="/cortos"> [ cortometraje ] </a></h5>
 				</div>
 				<div class="row text-center">
-					<div class="col-sm-12">
-						<a href="/tracks/view/2">
-							<img class="col-sm-12 img-responsive img-rounded" src="/img/thumbs/largometraje1.jpg" />
-						</a>
+					<div class="col-sm-11 col-sm-offset-1 videoRow">
+						<div class="row text-center videoThumb">
+							<div class="col-sm-12">
+								<a href="/tracks/view/2"> <img class="col-sm-12 img-responsive img-rounded" src="/img/thumbs/largometraje1.jpg" /> </a>
+							</div>
+						</div>
+						<div class="row text-center">
+							<div class="col-sm-12 videoText" >
+								<span>ADICTOS</span>
+							</div>
+						</div>
 					</div>
 				</div>
 				<br />
 				<div class="row text-center">
-					<div class="col-sm-12">
-						<a href="/tracks/view/2">
-							<img class="col-sm-12 img-responsive img-rounded" src="/img/thumbs/largometraje2.jpg" />
-						</a>
+					<div class="col-sm-11 col-sm-offset-1 videoRow">
+						<div class="row text-center videoThumb">
+							<div class="col-sm-12">
+								<a href="/tracks/view/2"> <img class="col-sm-12 img-responsive img-rounded" src="/img/thumbs/largometraje2.jpg" /> </a>
+							</div>
+						</div>
+						<div class="row text-center">
+							<div class="col-sm-12 videoText" >
+								<span>EMITERIO</span>
+							</div>
+						</div>
 					</div>
 				</div>
 				<br />
 				<div class="row text-center">
-					<div class="col-sm-12">
-						<a href="/tracks/view/2">
-							<img class="col-sm-12 img-responsive img-rounded" src="/img/thumbs/largometraje3.jpg" />
-						</a>
+					<div class="col-sm-11 col-sm-offset-1 videoRow">
+						<div class="row text-center videoThumb">
+							<div class="col-sm-12">
+								<a href="/tracks/view/2"> <img class="col-sm-12 img-responsive img-rounded" src="/img/thumbs/largometraje3.jpg" /> </a>
+							</div>
+						</div>
+						<div class="row text-center">
+							<div class="col-sm-12 videoText" >
+								<span>PAISANOS</span>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
