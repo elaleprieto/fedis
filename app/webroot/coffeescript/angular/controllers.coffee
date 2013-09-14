@@ -15,9 +15,22 @@ App.controller 'TracksController', ($scope, $http, $timeout) ->
 				$scope.medias.splice(index, 1)
 		$scope.medias
 
-	$scope.select = (media) ->
+	$scope.getImagenes = ->
+		aux = []
+		angular.forEach $scope.added, (video, index) ->
+			aux.push video.Track.portadaId
+		angular.forEach $scope.imagenes, (imagen, index) ->
+			if imagen.id in aux
+				$scope.imagenes.splice(index, 1)
+		$scope.imagenes
+
+	$scope.selectVideo = (media) ->
 		$scope.entryId = media.id	
-		$scope.selected = media
+		$scope.selectedVideo = media
+  
+	$scope.selectImagen = (imagen) ->
+		$scope.portadaId = imagen.id	
+		$scope.selectedImagen = imagen
   
 	$scope.submit = (event) ->
 		event.preventDefault()

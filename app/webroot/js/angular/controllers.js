@@ -26,9 +26,27 @@
       });
       return $scope.medias;
     };
-    $scope.select = function(media) {
+    $scope.getImagenes = function() {
+      var aux;
+      aux = [];
+      angular.forEach($scope.added, function(video, index) {
+        return aux.push(video.Track.portadaId);
+      });
+      angular.forEach($scope.imagenes, function(imagen, index) {
+        var _ref;
+        if (_ref = imagen.id, __indexOf.call(aux, _ref) >= 0) {
+          return $scope.imagenes.splice(index, 1);
+        }
+      });
+      return $scope.imagenes;
+    };
+    $scope.selectVideo = function(media) {
       $scope.entryId = media.id;
-      return $scope.selected = media;
+      return $scope.selectedVideo = media;
+    };
+    $scope.selectImagen = function(imagen) {
+      $scope.portadaId = imagen.id;
+      return $scope.selectedImagen = imagen;
     };
     $scope.submit = function(event) {
       event.preventDefault();

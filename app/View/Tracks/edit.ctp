@@ -77,9 +77,20 @@ echo $this->Html->script(array('//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/
 				<?php
 				echo $this->Form->input('Category', array('class' => 'col-sm-12', 'div' => 'col-sm-4', 'label' => false, 'placeholder' => 'Categorias', 'size' => '6'));
 				echo $this->Form->input('Tag', array('class' => 'col-sm-12', 'div' => 'col-sm-4', 'label' => false, 'placeholder' => 'Etiquetas', 'size' => '6'));
-				echo $this->Form->input('entryId', array('class' => 'col-sm-12', 'ng-model' => 'entryId', 'div' => 'col-sm-4', 'label' => false
-					, 'placeholder' => 'Video ID', 'required', 'ng-init'=> 'entryId="'.$this->data['Track']['entryId'].'"'));
 				?>
+				<div class="col-sm-4">
+					<div class="row">
+						<?php
+						echo $this->Form->input('entryId', array('class' => 'col-sm-12', 'ng-model' => 'entryId', 'div' => 'col-sm-12', 'label' => false
+							, 'placeholder' => 'Video ID', 'required', 'ng-init'=> 'entryId="'.$this->data['Track']['entryId'].'"'));
+						?>
+						<br />
+						<?php
+						echo $this->Form->input('portadaId', array('class' => 'col-sm-12', 'ng-model' => 'portadaId', 'div' => 'col-sm-12', 'label' => false
+							, 'placeholder' => 'Portada ID', 'required', 'ng-init'=> 'portadaId="'.$this->data['Track']['portadaId'].'"'));
+						?>
+					</div>
+				</div>
 			</div>
 			<div class="row">
 				<button class="btn col-sm-10 col-sm-offset-1" type="submit">
@@ -102,11 +113,36 @@ echo $this->Html->script(array('//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/
 				</tr>
 			</thead>
 			<tbody ng-init='medias=<?php echo json_encode($kalturaList->objects); ?>; added=<?php echo json_encode($addedList); ?>'>
-				<tr ng-class="{highlight:media == selected}" ng-repeat="media in getMedias()">
+				<tr ng-class="{highlight:media == selectedVideo}" ng-repeat="media in getMedias()">
 					<td ng-bind="media.id"></td>
 					<td ng-bind="media.name"></td>
 					<td class="col-sm-1">
-						<button ng-click="select(media)">
+						<button ng-click="selectVideo(media)">
+							Seleccionar
+						</button>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="row">
+		<h2 class="text-center">Imágenes cargadas</h2>
+	</div>
+	<div class="row">
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Imagen ID</th>
+					<th>Nombre de la imagen</th>
+					<th>&nbsp;</th>
+				</tr>
+			</thead>
+			<tbody ng-init='imagenes=<?php echo json_encode($kalturaImagenList->objects); ?>'>
+				<tr ng-class="{highlight:imagen == selectedImagen}" ng-repeat="imagen in getImagenes()">
+					<td ng-bind="imagen.id"></td>
+					<td ng-bind="imagen.name"></td>
+					<td class="col-sm-1">
+						<button ng-click="selectImagen(imagen)">
 							Seleccionar
 						</button>
 					</td>

@@ -77,22 +77,38 @@ class TracksController extends AppController {
 		$tags = $this->Track->Tag->find('list');
 		
 		$kClient = $this->Kaltura->getKalturaClient();
-			
+		
+		###########
+		# Videos
+		###########
 		# Filtro
 		$filter = new KalturaMediaEntryFilter();
 		$filter->mediaTypeEqual = 1; //only sync videos
-		
 		# Paginacion
 		$pager = new KalturaFilterPager();
 		$pager->pageSize = 1000;
 		$pager->pageIndex = 1;
-		
 		# Listar
 		$kalturaList = $kClient->media->listAction($filter, $pager); # videos en el servidor de Kaltura
+		
+		###########
+		# Imagenes
+		###########
+		# Filtro
+		$filter = new KalturaMediaEntryFilter();
+		$filter->mediaTypeEqual = 2; //only sync imagenes
+		# Paginacion
+		$pager = new KalturaFilterPager();
+		$pager->pageSize = 1000;
+		$pager->pageIndex = 1;
+		# Listar
+		$kalturaImagenList = $kClient->media->listAction($filter, $pager); # videos en el servidor de Kaltura
+
+		
 		$this->Track->recursive = -1;
 		$addedList = $this->Track->find('all', array('fields'=>'entryId')); # videos ya linkeados
 		
-		$this->set(compact('addedList', 'categories', 'kalturaList', 'tags'));
+		$this->set(compact('addedList', 'categories', 'kalturaList', 'kalturaImagenList', 'tags'));
 	}
 
 /**
@@ -125,21 +141,37 @@ class TracksController extends AppController {
 		
 		$kClient = $this->Kaltura->getKalturaClient();
 			
+		###########
+		# Videos
+		###########
 		# Filtro
 		$filter = new KalturaMediaEntryFilter();
 		$filter->mediaTypeEqual = 1; //only sync videos
-		
 		# Paginacion
 		$pager = new KalturaFilterPager();
 		$pager->pageSize = 1000;
 		$pager->pageIndex = 1;
-		
 		# Listar
 		$kalturaList = $kClient->media->listAction($filter, $pager); # videos en el servidor de Kaltura
+		
+		###########
+		# Imagenes
+		###########
+		# Filtro
+		$filter = new KalturaMediaEntryFilter();
+		$filter->mediaTypeEqual = 2; //only sync imagenes
+		# Paginacion
+		$pager = new KalturaFilterPager();
+		$pager->pageSize = 1000;
+		$pager->pageIndex = 1;
+		# Listar
+		$kalturaImagenList = $kClient->media->listAction($filter, $pager); # videos en el servidor de Kaltura
+		
+		
 		$this->Track->recursive = -1;
 		$addedList = $this->Track->find('all', array('fields'=>'entryId')); # videos ya linkeados
 		
-		$this->set(compact('addedList', 'categories', 'kalturaList', 'tags'));
+		$this->set(compact('addedList', 'categories', 'kalturaList', 'kalturaImagenList', 'tags'));
 	}
 
 /**
