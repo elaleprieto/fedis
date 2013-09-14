@@ -47,6 +47,7 @@ $cakeDescription = __d('cake_dev', 'Federal Distribuciones');
 	</head>
 	<body>
 		<!-- MENU 1 :: buscador-->
+		
 		<div class="navbar-out">
 			<nav class="navbar navbar-top" role="navigation">
 			    <ul class="nav navbar-nav  col-sm-12 text-center">
@@ -61,59 +62,9 @@ $cakeDescription = __d('cake_dev', 'Federal Distribuciones');
 			    </ul>
 				
 				<!-- MENU 2 :: Categorías -->
-				<!-- <div>
-				    <div class="col-sm-12 col-lg-8 col-lg-offset-2">
-				        <div class="row categories-menu"> -->
-				            <!-- <ul class="nav nav-pills nav-justified">
-				                <li>
-				                    <a href="/ficcion">ficción</a>
-				                </li>
-				                <li>
-				                    <a href="/documental">documental</a>
-				                </li>
-				                <li>
-				                    <a href="/animacion">animación</a>
-				                </li>
-				                <li>
-				                    <a href="/cortos">cortometrajes</a>
-				                </li>
-				                <li>
-				                    <a href="#">quienes somos</a>
-				                </li>
-				                <li>
-				                    <a href="#">contacto</a>
-				                </li>
-				            </ul> -->
-				                <!-- <div class="col-sm-1 text-center">
-				                    <a href="/">inicio</a>
-				                </div>
-				                <div class="col-sm-1 text-center">
-				                    <a href="/ficcion">[ ficción ]</a>
-				                </div>
-				                <div class="col-sm-2 text-center">
-				                    <a href="/documental">[ documental ]</a>
-				                </div>
-				                <div class="col-sm-2 text-center">
-				                    <a href="/animacion">[ animación ]</a>
-				                </div>
-				                <div class="col-sm-2 text-center">
-				                    <a href="/cortos">[ cortos ]</a>
-				                </div>
-				                <div class="col-sm-2 text-center">
-				                    <a href="#">quienes somos</a>
-				                </div>
-				                <div class="col-sm-1 text-center">
-				                    <a href="#">contacto</a>
-								</div>
-				                <div class="col-sm-1 text-center">
-				                    <a href="http://200.110.135.125/~federal/site" target="_blank">Inscripción</a>
-				                </div>
-				        </div>
-				    </div>
-				</div> -->
 				<div>
 				    <div class="col-sm-12">
-				        <div class="row categories-menu text-center">
+				        <div class="categories-menu text-center">
 			                <span>
 			                    <a href="/">inicio</a>
 			                </span>
