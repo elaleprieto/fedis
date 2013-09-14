@@ -63,7 +63,7 @@ class TracksController extends AppController {
 	public function add() {
 		if ($this->request->is('post')) {
 			$track = $this->request->data;
-			$track['titulo'] = $track['Track']['title'];
+			$track['Track']['titulo'] = $track['Track']['title'];
 			$this->Track->create();
 			if ($this->Track->save($track)) {
 				$this->Session->setFlash(__('The track has been saved'));
@@ -108,7 +108,7 @@ class TracksController extends AppController {
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
 			$track = $this->request->data;
-			$track['titulo'] = $track['Track']['title'];
+			$track['Track']['titulo'] = $track['Track']['title'];
 			if ($this->Track->save($track)) {
 				$this->Session->setFlash(__('The track has been saved'));
 				return $this->redirect(Router::url('/listado'));
