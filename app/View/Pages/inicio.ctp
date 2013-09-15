@@ -1,5 +1,8 @@
 <?php
 echo $this->Html->css(array('inicio', 'http://fonts.googleapis.com/css?family=Dosis'), null, array('inline' => false));
+$cantidad = 3;
+// $ficcion = $this->requestAction('tracks/get/'.$cantidad);
+$ficcion = $this->requestAction(Router::url(array('controller'=>'tracks', 'action'=>'get', $cantidad, 'ficcion')));
 ?>
 
 <!-- Carousel Video -->
@@ -60,26 +63,44 @@ echo $this->Html->css(array('inicio', 'http://fonts.googleapis.com/css?family=Do
 				<div class="row text-center">
 					<h5><a href="/ficcion"> [ ficción ] </a></h5>
 				</div>
-				<div class="row text-center ">
+				<?php foreach ($ficcion as $track): ?>
+					<a href="/tracks/view/<?php echo $track['Track']['id']?>">
+						<div class="row text-center ">
+							<div class="col-sm-11 col-sm-offset-1 videoRow">
+								<div class="row text-center videoThumb">
+									<div class="col-sm-12">
+										<?php
+										if($track['Track']['portadaId']):
+											// http://"YOURSERVER"/p/1/sp/100/thumbnail/entry_id/"ENTRYID"/width/"WIDTH"/height/"HEIGHT"
+											echo $this->Html->image('http://librekaltura.com.ar/p/1/sp/100/thumbnail/entry_id/' . $track['Track']['portadaId']
+												, array('class' => 'portada')
+											);
+										else:
+											echo $this->Html->image('thumbs/noThumb.png'
+												, array('class' => 'portada')
+											);
+										endif;
+										?>
+									</div>
+								</div>
+								<div class="row text-center">
+									<div class="col-sm-12 videoText" >
+										<span><?php echo $track['Track']['title'] ?></span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</a>
+					<br />
+				<?php endforeach;	?>
+				
+				
+				
+				<!-- <div class="row text-center ">
 					<div class="col-sm-11 col-sm-offset-1 videoRow">
 						<div class="row text-center videoThumb">
 							<div class="col-sm-12">
-								<a href="/tracks/view/2"> <img class="col-sm-12 img-responsive img-rounded" src="/img/thumbs/ficcion1.jpg" /> </a>
-							</div>
-						</div>
-						<div class="row text-center">
-							<div class="col-sm-12 videoText" >
-								<span>BIEN DE FAMILIA</span>
-							</div>
-						</div>
-					</div>
-				</div>
-				<br />
-				<div class="row text-center ">
-					<div class="col-sm-11 col-sm-offset-1 videoRow">
-						<div class="row text-center videoThumb">
-							<div class="col-sm-12">
-								<a href="/tracks/view/2"> <img class="col-sm-12 img-responsive img-rounded" src="/img/thumbs/ficcion2.jpg" /> </a>
+								<a href="/tracks/view/2"> <img class="portada" src="/img/thumbs/ficcion2.jpg" /> </a>
 							</div>
 						</div>
 						<div class="row text-center">
@@ -94,7 +115,7 @@ echo $this->Html->css(array('inicio', 'http://fonts.googleapis.com/css?family=Do
 					<div class="col-sm-11 col-sm-offset-1 videoRow">
 						<div class="row text-center videoThumb">
 							<div class="col-sm-12">
-								<a href="/tracks/view/2"> <img class="col-sm-12 img-responsive img-rounded" src="/img/thumbs/ficcion3.jpg" /> </a>
+								<a href="/tracks/view/2"> <img class="portada" src="/img/thumbs/ficcion3.jpg" /> </a>
 							</div>
 						</div>
 						<div class="row text-center">
@@ -103,7 +124,7 @@ echo $this->Html->css(array('inicio', 'http://fonts.googleapis.com/css?family=Do
 							</div>
 						</div>
 					</div>
-				</div>
+				</div> -->
 			</div>
 			<div class="col-sm-3">
 				<div class="row text-center">
@@ -113,7 +134,7 @@ echo $this->Html->css(array('inicio', 'http://fonts.googleapis.com/css?family=Do
 					<div class="col-sm-11 col-sm-offset-1 videoRow">
 						<div class="row text-center videoThumb">
 							<div class="col-sm-12">
-								<a href="/tracks/view/2"> <img class="col-sm-12 img-responsive img-rounded" src="/img/thumbs/documental1.jpg" /> </a>
+								<a href="/tracks/view/2"> <img class="portada" src="/img/thumbs/documental1.jpg" /> </a>
 							</div>
 						</div>
 						<div class="row text-center">
@@ -128,7 +149,7 @@ echo $this->Html->css(array('inicio', 'http://fonts.googleapis.com/css?family=Do
 					<div class="col-sm-11 col-sm-offset-1 videoRow">
 						<div class="row text-center videoThumb">
 							<div class="col-sm-12">
-								<a href="/tracks/view/2"> <img class="col-sm-12 img-responsive img-rounded" src="/img/thumbs/documental2.jpg" /> </a>
+								<a href="/tracks/view/2"> <img class="portada" src="/img/thumbs/documental2.jpg" /> </a>
 							</div>
 						</div>
 						<div class="row text-center">
@@ -143,7 +164,7 @@ echo $this->Html->css(array('inicio', 'http://fonts.googleapis.com/css?family=Do
 					<div class="col-sm-11 col-sm-offset-1 videoRow">
 						<div class="row text-center videoThumb">
 							<div class="col-sm-12">
-								<a href="/tracks/view/2"> <img class="col-sm-12 img-responsive img-rounded" src="/img/thumbs/documental3.jpg" /> </a>
+								<a href="/tracks/view/2"> <img class="portada" src="/img/thumbs/documental3.jpg" /> </a>
 							</div>
 						</div>
 						<div class="row text-center">
@@ -162,7 +183,7 @@ echo $this->Html->css(array('inicio', 'http://fonts.googleapis.com/css?family=Do
 					<div class="col-sm-11 col-sm-offset-1 videoRow">
 						<div class="row text-center videoThumb">
 							<div class="col-sm-12">
-								<a href="/tracks/view/2"> <img class="col-sm-12 img-responsive img-rounded" src="/img/thumbs/animacion1.jpg" /> </a>
+								<a href="/tracks/view/2"> <img class="portada" src="/img/thumbs/animacion1.jpg" /> </a>
 							</div>
 						</div>
 						<div class="row text-center">
@@ -177,7 +198,7 @@ echo $this->Html->css(array('inicio', 'http://fonts.googleapis.com/css?family=Do
 					<div class="col-sm-11 col-sm-offset-1 videoRow">
 						<div class="row text-center videoThumb">
 							<div class="col-sm-12">
-								<a href="/tracks/view/2"> <img class="col-sm-12 img-responsive img-rounded" src="/img/thumbs/animacion2.jpg" /> </a>
+								<a href="/tracks/view/2"> <img class="portada" src="/img/thumbs/animacion2.jpg" /> </a>
 							</div>
 						</div>
 						<div class="row text-center">
@@ -192,7 +213,7 @@ echo $this->Html->css(array('inicio', 'http://fonts.googleapis.com/css?family=Do
 					<div class="col-sm-11 col-sm-offset-1 videoRow">
 						<div class="row text-center videoThumb">
 							<div class="col-sm-12">
-								<a href="/tracks/view/2"> <img class="col-sm-12 img-responsive img-rounded" src="/img/thumbs/animacion3.jpg" /> </a>
+								<a href="/tracks/view/2"> <img class="portada" src="/img/thumbs/animacion3.jpg" /> </a>
 							</div>
 						</div>
 						<div class="row text-center">
@@ -211,7 +232,7 @@ echo $this->Html->css(array('inicio', 'http://fonts.googleapis.com/css?family=Do
 					<div class="col-sm-11 col-sm-offset-1 videoRow">
 						<div class="row text-center videoThumb">
 							<div class="col-sm-12">
-								<a href="/tracks/view/2"> <img class="col-sm-12 img-responsive img-rounded" src="/img/thumbs/largometraje1.jpg" /> </a>
+								<a href="/tracks/view/2"> <img class="portada" src="/img/thumbs/largometraje1.jpg" /> </a>
 							</div>
 						</div>
 						<div class="row text-center">
@@ -226,7 +247,7 @@ echo $this->Html->css(array('inicio', 'http://fonts.googleapis.com/css?family=Do
 					<div class="col-sm-11 col-sm-offset-1 videoRow">
 						<div class="row text-center videoThumb">
 							<div class="col-sm-12">
-								<a href="/tracks/view/2"> <img class="col-sm-12 img-responsive img-rounded" src="/img/thumbs/largometraje2.jpg" /> </a>
+								<a href="/tracks/view/2"> <img class="portada" src="/img/thumbs/largometraje2.jpg" /> </a>
 							</div>
 						</div>
 						<div class="row text-center">
@@ -241,7 +262,7 @@ echo $this->Html->css(array('inicio', 'http://fonts.googleapis.com/css?family=Do
 					<div class="col-sm-11 col-sm-offset-1 videoRow">
 						<div class="row text-center videoThumb">
 							<div class="col-sm-12">
-								<a href="/tracks/view/2"> <img class="col-sm-12 img-responsive img-rounded" src="/img/thumbs/largometraje3.jpg" /> </a>
+								<a href="/tracks/view/2"> <img class="portada" src="/img/thumbs/largometraje3.jpg" /> </a>
 							</div>
 						</div>
 						<div class="row text-center">

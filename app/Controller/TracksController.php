@@ -10,7 +10,7 @@ class TracksController extends AppController {
 
 	public function beforeFilter() {
         parent::beforeFilter();
-        $this -> Auth -> allow('add', 'edit', 'index', 'view');
+        $this -> Auth -> allow('add', 'edit', 'index', 'view', 'get');
     }
 
 /**
@@ -194,4 +194,46 @@ class TracksController extends AppController {
 		$this->Session->setFlash(__('Track was not deleted'));
 		return $this->redirect(array('action' => 'index'));
 	}
+
+/**
+ * get method: usado por Inicio para desplegar videos
+ *
+ * @param string $cantidad, $categoria
+ * @return void
+ */
+	public function get($cantidad = null, $categoria = null) {
+		if (!$cantidad || !$categoria) {
+			throw new NotFoundException(__('Invalid track'));
+		}
+		$categoria_id = $this->Track->Category->field('id', array('name' => $categoria));
+		
+		if (!$categoria_id) {
+			throw new NotFoundException(__('Invalid track'));
+		}
+		
+		$options['joins'] = array(
+		    array('table' => 'categories_tracks',
+		        'alias' => 'CategoriesTrack',
+		        'type' => 'inner',
+		        'conditions' => array(
+		            'Track.id = CategoriesTrack.track_id'
+		        )
+		    ),
+		    array('table' => 'categories',
+		        'alias' => 'Category',
+		        'type' => 'inner',
+		        'conditions' => array(
+		            'CategoriesTrack.category_id = Category.id'
+		        )
+		    )
+		);
+		
+		$options['conditions'] = array('Category.id' => $categoria_id);
+		$options['limit'] = $cantidad;
+		$options['order'] = 'RAND()';
+		
+		return $this->Track->find('all', $options);
+	}
+	
+	
 }
