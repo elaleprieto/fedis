@@ -2,3 +2,10 @@
 h6 {
   color: white;
 }
+
+/* line 6, ../../sass/categories/view.sass */
+.videos > .row {
+  height: 80px;
+  margin-bottom: 10px;
+  overflow: hidden;
+}

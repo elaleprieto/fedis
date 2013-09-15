@@ -31,44 +31,43 @@ echo $this->Html->css('categories/view', null, array('inline' => false));
 		</div>
 		
 		<div class="row">
-			<div class="col-sm-12">
+			<div class="col-sm-12 videos">
 				<?php 
 				$i = 0;
 				foreach ($category['Track'] as $track): ?>
 					<?php if($i % 2 == 0) echo '<div class="row">' ?>
 						<div class="col-sm-6">
 							<div class="row">
-								<div class="col-sm-6">
-									<?php
-									// echo $this->Html->link($this->Html->image('http://placehold.it/350x170'
-											// , array('class' => 'img-responsive')
-											// )
-										// , array('controller' => 'tracks', 'action' => 'view', $track['id'])
-										// , array('escape' => false)
-									// );
-									?>
-									<a href="/tracks/view/2">
-										<img class="col-sm-12 img-responsive img-rounded" src="/img/thumbs/ficcion1.jpg" /> 
-									</a>
-									<!-- <img class="img-responsive" src="http://placehold.it/350x170" /> -->
-								</div>
-								<div class="col-sm-6">
-									<h5><?php echo $track['title']; ?></h5>
-									<p>
-										<?php echo $category['Category']['title'] . ' - ' . $track['formato']; ?>
-										<br />
-										<?php echo $track['duracion']; ?>
-									</p>
-								</div>
+								<a href="/tracks/view/<?php echo $track['id']; ?>">
+									<div class="col-sm-6">
+										<?php
+										if($track['portadaId']):
+											// http://"YOURSERVER"/p/1/sp/100/thumbnail/entry_id/"ENTRYID"/width/"WIDTH"/height/"HEIGHT"
+											echo $this->Html->image('http://librekaltura.com.ar/p/1/sp/100/thumbnail/entry_id/' . $track['portadaId'] . '/width/135/height/76'
+												, array('class' => 'col-sm-12 img-responsive')
+											);
+										else:
+											echo $this->Html->image('thumbs/noThumb.png'
+												, array('class' => 'col-sm-12 img-responsive')
+											);
+										endif;
+										?>
+									</div>
+									<div class="col-sm-6">
+										<h5><?php echo $track['title']; ?></h5>
+										<p>
+											<?php echo $category['Category']['title'] . ' - ' . $track['formato']; ?>
+											<br />
+											<?php echo $track['duracion']; ?>
+										</p>
+									</div>
+								</a>
 							</div>
 						</div>
 					<?php if($i % 2 == 1) echo '</div>' ?>
 				<?php 
 					$i++;
 				endforeach;
-				// ver
-				// # si i es par es porque la cantidad de tracks es impar => hay que cerrar la row
-				// if($i % 2 == 0) echo '</div>' 
 				?>
 			</div>
 		</div>
