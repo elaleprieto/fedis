@@ -56,7 +56,7 @@ $documental = $this->requestAction(Router::url(array('controller' => 'tracks', '
 				</div>
 			</div>
 			<div class="col-sm-12 slogan text-center">
-				<span>CONTENIDOS AUDIOVISUALES CON IDENTIDAD LOCAL Y PROYECCION INTERNACIONAL.</span>
+				<span><strong>CONTENIDOS AUDIOVISUALES CON IDENTIDAD LOCAL Y PROYECCION INTERNACIONAL</strong></span>
 			</div>
 			
 		</div>
