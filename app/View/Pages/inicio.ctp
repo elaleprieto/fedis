@@ -35,9 +35,9 @@ $ficcion = $this->requestAction(Router::url(array('controller'=>'tracks', 'actio
 			<div class="carousel-inner">
 				<div class="item active">
 					<img class="img-responsive" src="/img/thumbs/c0.jpg" />
-					<div class="carousel-caption">
+					<!-- <div class="carousel-caption">
 						"Con un grupo de productores y realizadores argentinos estaremos presentes en MIPCOM 2013, la feria más esperada del año en el mercado global de contenidos para la industria del entretenimiento en todas las plataformas."
-					</div>
+					</div> -->
 				</div>
 				<div class="item">
 					<img class="img-responsive" src="/img/thumbs/c1.png" />
