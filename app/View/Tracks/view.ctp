@@ -34,19 +34,18 @@
 			<div class="col-sm-12">
 				<div class="row">
 					<div class="col-sm-3">
-						<img class="img-responsive" src="/img/thumbs/afiche.png" />
+						<!-- <img class="img-responsive" src="/img/thumbs/afiche.png" /> -->
 						<?php
-						// if(isset($thumbs) && sizeof($thumbs) > 0):
-							// $thumb = $thumbs[0];
-							// try	{
-								// $thumb_url = $kClient->thumbAsset->serve($thumb->id);
-							// } catch(Exception $ex) {
-								// echo KajooHelper::getKalturaError(JText::_('Fail on geting thumb info'));
-							// }
-						?>
-							<!-- <img class="img-responsive" src="<?php echo $thumb_url;?>" /> -->
-						<?php
-						// endif;
+						if($track['Track']['portadaId']):
+							// http://"YOURSERVER"/p/1/sp/100/thumbnail/entry_id/"ENTRYID"/width/"WIDTH"/height/"HEIGHT"
+							echo $this->Html->image('http://librekaltura.com.ar/p/1/sp/100/thumbnail/entry_id/' . $track['Track']['portadaId']
+								, array('class' => 'col-sm-12 img-responsive')
+							);
+						else:
+							echo $this->Html->image('thumbs/noThumb.png'
+								, array('class' => 'col-sm-12 img-responsive')
+							);
+						endif;
 						?>
 					</div>
 					<div class="col-sm-9">
