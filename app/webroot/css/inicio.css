@@ -39,6 +39,11 @@ h5 {
 }
 
 /* line 33, ../sass/inicio.sass */
+.slogan {
+  margin-top: 5px;
+}
+
+/* line 36, ../sass/inicio.sass */
 .video {
   background-image: url('/img/backgrounds/abstractBackgroundReverse.jpg?1379108999');
   background-repeat: no-repeat;
@@ -49,7 +54,7 @@ h5 {
   background-size: 100% 120%;
 }
 
-/* line 41, ../sass/inicio.sass */
+/* line 44, ../sass/inicio.sass */
 .videoRow {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(30%, transparent), color-stop(85%, #072b3d), color-stop(100%, #072b3d));
   background-image: -webkit-linear-gradient(transparent 30%, #072b3d 85%, #072b3d 100%);
@@ -63,13 +68,13 @@ h5 {
   height: 165px;
 }
 
-/* line 48, ../sass/inicio.sass */
+/* line 51, ../sass/inicio.sass */
 .videoText {
   padding: 10px 0;
   font-family: "Dosis", sans-serif;
 }
 
-/* line 53, ../sass/inicio.sass */
+/* line 56, ../sass/inicio.sass */
 .videoThumb {
   padding: 10px 0;
 }

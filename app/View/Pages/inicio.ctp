@@ -2,8 +2,8 @@
 echo $this->Html->css(array('inicio', 'http://fonts.googleapis.com/css?family=Dosis'), null, array('inline' => false));
 $cantidad = 3;
 // $ficcion = $this->requestAction('tracks/get/'.$cantidad);
-$ficcion = $this->requestAction(Router::url(array('controller'=>'tracks', 'action'=>'get', $cantidad, 'ficcion')));
-$documental = $this->requestAction(Router::url(array('controller'=>'tracks', 'action'=>'get', $cantidad, 'documental')));
+$ficcion = $this->requestAction(Router::url(array('controller' => 'tracks', 'action' => 'get', $cantidad, 'ficcion')));
+$documental = $this->requestAction(Router::url(array('controller' => 'tracks', 'action' => 'get', $cantidad, 'documental')));
 ?>
 
 <!-- Carousel Video -->
@@ -25,32 +25,40 @@ $documental = $this->requestAction(Router::url(array('controller'=>'tracks', 'ac
 		</div>
 	</div>
 	<div class="col-sm-7">
-		<div id="carousel" class="carousel slide text-center">
-			<!-- Indicators -->
-			<ol class="carousel-indicators">
-				<li data-target="#carousel" data-slide-to="0" class="active"></li>
-				<li data-target="#carousel" data-slide-to="1"></li>
-				<li data-target="#carousel" data-slide-to="2"></li>
-			</ol>
-			<!-- Wrapper for slides -->
-			<div class="carousel-inner">
-				<div class="item active">
-					<img class="img-responsive" src="/img/thumbs/c0.jpg" />
-					<!-- <div class="carousel-caption">
-						"Con un grupo de productores y realizadores argentinos estaremos presentes en MIPCOM 2013, la feria más esperada del año en el mercado global de contenidos para la industria del entretenimiento en todas las plataformas."
-					</div> -->
-				</div>
-				<div class="item">
-					<img class="img-responsive" src="/img/thumbs/c1.png" />
-				</div>
-				<div class="item">
-					<img class="img-responsive" src="/img/thumbs/c2.png" />
+		<div class="row">
+			<div class="col-sm-12">
+				<div id="carousel" class="carousel slide text-center">
+					<!-- Indicators -->
+					<ol class="carousel-indicators">
+						<li data-target="#carousel" data-slide-to="0" class="active"></li>
+						<li data-target="#carousel" data-slide-to="1"></li>
+						<li data-target="#carousel" data-slide-to="2"></li>
+					</ol>
+					<!-- Wrapper for slides -->
+					<div class="carousel-inner">
+						<div class="item active">
+							<img class="img-responsive" src="/img/thumbs/c0.jpg" />
+							<!-- <div class="carousel-caption">
+								"Con un grupo de productores y realizadores argentinos estaremos presentes en MIPCOM 2013, la feria más esperada del año en el mercado global de contenidos para la industria del entretenimiento en todas las plataformas."
+							</div> -->
+						</div>
+						<div class="item">
+							<img class="img-responsive" src="/img/thumbs/c1.png" />
+						</div>
+						<div class="item">
+							<img class="img-responsive" src="/img/thumbs/c2.png" />
+						</div>
+					</div>
+		
+					<!-- Controls -->
+					<!-- <a class="left carousel-control" href="#carousel" data-slide="prev"> <span class="icon-prev"></span> </a>
+					<a class="right carousel-control" href="#carousel" data-slide="next"> <span class="icon-next"></span> </a> -->
 				</div>
 			</div>
-
-			<!-- Controls -->
-			<!-- <a class="left carousel-control" href="#carousel" data-slide="prev"> <span class="icon-prev"></span> </a>
-			<a class="right carousel-control" href="#carousel" data-slide="next"> <span class="icon-next"></span> </a> -->
+			<div class="col-sm-12 slogan text-center">
+				<span>CONTENIDOS AUDIOVISUALES CON IDENTIDAD LOCAL Y PROYECCION INTERNACIONAL.</span>
+			</div>
+			
 		</div>
 	</div>
 </div>
@@ -71,15 +79,11 @@ $documental = $this->requestAction(Router::url(array('controller'=>'tracks', 'ac
 								<div class="row text-center videoThumb">
 									<div class="col-sm-12">
 										<?php
-										if($track['Track']['portadaId']):
+										if ($track['Track']['portadaId']) :
 											// http://"YOURSERVER"/p/1/sp/100/thumbnail/entry_id/"ENTRYID"/width/"WIDTH"/height/"HEIGHT"
-											echo $this->Html->image('http://librekaltura.com.ar/p/1/sp/100/thumbnail/entry_id/' . $track['Track']['portadaId']
-												, array('class' => 'portada')
-											);
-										else:
-											echo $this->Html->image('thumbs/noThumb.png'
-												, array('class' => 'portada')
-											);
+											echo $this->Html->image('http://librekaltura.com.ar/p/1/sp/100/thumbnail/entry_id/' . $track['Track']['portadaId'], array('class' => 'portada'));
+										else :
+											echo $this->Html->image('thumbs/noThumb.png', array('class' => 'portada'));
 										endif;
 										?>
 									</div>
@@ -93,7 +97,7 @@ $documental = $this->requestAction(Router::url(array('controller'=>'tracks', 'ac
 						</div>
 					</a>
 					<br />
-				<?php endforeach;	?>
+				<?php endforeach; ?>
 				
 				
 				
@@ -139,15 +143,11 @@ $documental = $this->requestAction(Router::url(array('controller'=>'tracks', 'ac
 								<div class="row text-center videoThumb">
 									<div class="col-sm-12">
 										<?php
-										if($track['Track']['portadaId']):
+										if ($track['Track']['portadaId']) :
 											// http://"YOURSERVER"/p/1/sp/100/thumbnail/entry_id/"ENTRYID"/width/"WIDTH"/height/"HEIGHT"
-											echo $this->Html->image('http://librekaltura.com.ar/p/1/sp/100/thumbnail/entry_id/' . $track['Track']['portadaId']
-												, array('class' => 'portada')
-											);
-										else:
-											echo $this->Html->image('thumbs/noThumb.png'
-												, array('class' => 'portada')
-											);
+											echo $this->Html->image('http://librekaltura.com.ar/p/1/sp/100/thumbnail/entry_id/' . $track['Track']['portadaId'], array('class' => 'portada'));
+										else :
+											echo $this->Html->image('thumbs/noThumb.png', array('class' => 'portada'));
 										endif;
 										?>
 									</div>
@@ -161,7 +161,7 @@ $documental = $this->requestAction(Router::url(array('controller'=>'tracks', 'ac
 						</div>
 					</a>
 					<br />
-				<?php endforeach;	?>
+				<?php endforeach; ?>
 				<!-- <div class="col-sm-11 col-sm-offset-1 videoRow">
 						<div class="row text-center videoThumb">
 							<div class="col-sm-12">

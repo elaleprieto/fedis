@@ -81,7 +81,7 @@ $cakeDescription = __d('cake_dev', 'Federal Distribuciones');
 			                    <a href="/cortos">[ cortos ]</a>
 			                </span>
 			                <span>
-			                    <a href="#">quienes somos</a>
+			                    <a href="/quienes">quienes somos</a>
 			                </span>
 			                <span>
 			                    <a href="#">contacto</a>
