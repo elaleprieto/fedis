@@ -51,24 +51,25 @@ h5 {
 
 /* line 41, ../sass/inicio.sass */
 .videoRow {
-  -webkit-box-shadow: 0px 0px 5px black;
-  -moz-box-shadow: 0px 0px 5px black;
-  box-shadow: 0px 0px 5px black;
-  border: 1px solid black;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(30%, transparent), color-stop(85%, #072b3d), color-stop(100%, #072b3d));
   background-image: -webkit-linear-gradient(transparent 30%, #072b3d 85%, #072b3d 100%);
   background-image: -moz-linear-gradient(transparent 30%, #072b3d 85%, #072b3d 100%);
   background-image: -o-linear-gradient(transparent 30%, #072b3d 85%, #072b3d 100%);
   background-image: linear-gradient(transparent 30%, #072b3d 85%, #072b3d 100%);
+  -webkit-box-shadow: 0px 0px 5px black;
+  -moz-box-shadow: 0px 0px 5px black;
+  box-shadow: 0px 0px 5px black;
+  border: 1px solid black;
+  height: 165px;
 }
 
-/* line 47, ../sass/inicio.sass */
+/* line 48, ../sass/inicio.sass */
 .videoText {
   padding: 10px 0;
   font-family: "Dosis", sans-serif;
 }
 
-/* line 52, ../sass/inicio.sass */
+/* line 53, ../sass/inicio.sass */
 .videoThumb {
   padding: 10px 0;
 }
