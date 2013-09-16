@@ -102,7 +102,7 @@ echo $this->Html->script(array('//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/
 						<div class="col-sm-6">
 							<div class="row">
 								<?php
-								echo $this->Form->input('portadaId', array('class' => 'col-sm-12', 'ng-model' => 'portadaId', 'div' => 'col-sm-12', 'label' => false, 'placeholder' => 'Portada ID', 'required'));
+								echo $this->Form->input('portadaId', array('class' => 'col-sm-12', 'ng-model' => 'portadaId', 'div' => 'col-sm-12', 'label' => false, 'placeholder' => 'Portada ID'));
 								?>
 							</div>
 						</div>
