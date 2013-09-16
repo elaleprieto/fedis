@@ -41,16 +41,19 @@ echo $this->Html->css('categories/view', null, array('inline' => false));
 								<a href="/tracks/view/<?php echo $track['id']; ?>">
 									<div class="col-sm-6">
 										<?php
-										if($track['portadaId']):
-											// http://"YOURSERVER"/p/1/sp/100/thumbnail/entry_id/"ENTRYID"/width/"WIDTH"/height/"HEIGHT"
-											echo $this->Html->image('http://librekaltura.com.ar/p/1/sp/100/thumbnail/entry_id/' . $track['portadaId'] . '/width/135/height/76'
-												, array('class' => 'col-sm-12 img-responsive')
-											);
-										else:
-											echo $this->Html->image('thumbs/noThumb.png'
-												, array('class' => 'col-sm-12 img-responsive')
-											);
-										endif;
+										$url = 'http://librekaltura.com.ar/p/1/sp/100/thumbnail/entry_id/' . $track['entryId'] . '/width/135/height/85';
+										echo $this->Html->image($url, array('class' => 'col-sm-12 img-responsive'));
+										// debug($kClient->getFirstThumb($track['entryId']));
+										// if($track['portadaId']):
+											// // http://"YOURSERVER"/p/1/sp/100/thumbnail/entry_id/"ENTRYID"/width/"WIDTH"/height/"HEIGHT"
+											// echo $this->Html->image('http://librekaltura.com.ar/p/1/sp/100/thumbnail/entry_id/' . $track['portadaId'] . '/width/135/height/76'
+												// , array('class' => 'col-sm-12 img-responsive')
+											// );
+										// else:
+											// echo $this->Html->image('thumbs/noThumb.png'
+												// , array('class' => 'col-sm-12 img-responsive')
+											// );
+										// endif;
 										?>
 									</div>
 									<div class="col-sm-6">

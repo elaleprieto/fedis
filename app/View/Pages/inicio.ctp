@@ -79,12 +79,14 @@ $documental = $this->requestAction(Router::url(array('controller' => 'tracks', '
 								<div class="row text-center videoThumb">
 									<div class="col-sm-12">
 										<?php
-										if ($track['Track']['portadaId']) :
-											// http://"YOURSERVER"/p/1/sp/100/thumbnail/entry_id/"ENTRYID"/width/"WIDTH"/height/"HEIGHT"
-											echo $this->Html->image('http://librekaltura.com.ar/p/1/sp/100/thumbnail/entry_id/' . $track['Track']['portadaId'], array('class' => 'portada'));
-										else :
-											echo $this->Html->image('thumbs/noThumb.png', array('class' => 'portada'));
-										endif;
+										$url = 'http://librekaltura.com.ar/p/1/sp/100/thumbnail/entry_id/' . $track['Track']['entryId'] . '/width/135/height/80';
+										echo $this->Html->image($url, array('class' => 'col-sm-12 img-responsive'));
+										// if ($track['Track']['portadaId']) :
+											// // http://"YOURSERVER"/p/1/sp/100/thumbnail/entry_id/"ENTRYID"/width/"WIDTH"/height/"HEIGHT"
+											// echo $this->Html->image('http://librekaltura.com.ar/p/1/sp/100/thumbnail/entry_id/' . $track['Track']['portadaId'], array('class' => 'portada'));
+										// else :
+											// echo $this->Html->image('thumbs/noThumb.png', array('class' => 'portada'));
+										// endif;
 										?>
 									</div>
 								</div>
@@ -143,12 +145,14 @@ $documental = $this->requestAction(Router::url(array('controller' => 'tracks', '
 								<div class="row text-center videoThumb">
 									<div class="col-sm-12">
 										<?php
-										if ($track['Track']['portadaId']) :
-											// http://"YOURSERVER"/p/1/sp/100/thumbnail/entry_id/"ENTRYID"/width/"WIDTH"/height/"HEIGHT"
-											echo $this->Html->image('http://librekaltura.com.ar/p/1/sp/100/thumbnail/entry_id/' . $track['Track']['portadaId'], array('class' => 'portada'));
-										else :
-											echo $this->Html->image('thumbs/noThumb.png', array('class' => 'portada'));
-										endif;
+										$url = 'http://librekaltura.com.ar/p/1/sp/100/thumbnail/entry_id/' . $track['Track']['entryId'] . '/width/135/height/85';
+										echo $this->Html->image($url, array('class' => 'col-sm-12 img-responsive'));
+										// if ($track['Track']['portadaId']) :
+											// // http://"YOURSERVER"/p/1/sp/100/thumbnail/entry_id/"ENTRYID"/width/"WIDTH"/height/"HEIGHT"
+											// echo $this->Html->image('http://librekaltura.com.ar/p/1/sp/100/thumbnail/entry_id/' . $track['Track']['portadaId'], array('class' => 'portada'));
+										// else :
+											// echo $this->Html->image('thumbs/noThumb.png', array('class' => 'portada'));
+										// endif;
 										?>
 									</div>
 								</div>

@@ -78,3 +78,8 @@ h5 {
 .videoThumb {
   padding: 10px 0;
 }
+/* line 59, ../sass/inicio.sass */
+.videoThumb img {
+  min-height: 85px;
+  max-height: 85px;
+}
