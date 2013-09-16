@@ -20,16 +20,82 @@ echo $this->Html->css(array('contacto', 'http://fonts.googleapis.com/css?family=
 			</p>
 		</div>
 	</div>
-	<div class="col-sm-7 datos text-center">
-		<p>
-			Av. 9 de Julio 2356 - Of. 456
-		</p>
-		<p class="texto">
-			Tel 011 - 45666968 / 45664687
-		</p>
-		<p class="texto">
-			<a href="mailto:federaldistribuciones@gmail.com" target="_blank">federaldistribuciones@gmail.com</a>
-		</p>
+	<div class="col-sm-7 datos">
+		
+		<h3> VENTAS / SALES </h3>
+		
+		<address>
+			<strong>PAOLA SUAREZ</strong>
+			<br />
+			Cel.: +549 351 2050261
+			<br />
+			Skype: orugadigital
+			<br />
+			Mail: paola@federaldistribucion.com.ar
+		</address>
+		<address>
+			<strong>LARA DECUZZI</strong>
+			<br />
+			Cel.: +549 424 0005
+			<br />
+			Skype: laradecuzzi
+			<br />
+			Mail: lara@federaldistribucion.com.ar
+		</address>
+		<address>
+			<strong>PAULA KUSCHNIR</strong>
+			<br />
+			Cel.: +54 9 388 4037616
+			<br />
+			Skype: paulitakus
+			<br />
+			Mail: paula@federaldistribucion.com.ar
+		</address>
+
+		<h3>COPRODUCCIONES / CO-PRODUCTIONS</h3>
+
+		<address>
+			<strong>PEPE TOBAL</strong>
+			<br />
+			Cel.: +549 351 6824393
+			<br />
+			Skype: pepetobal
+			<br />
+			Mail: pepe@federaldistribucion.com.ar
+		</address>
+		<address>
+			<strong>NÉSTOR MORENO</strong>
+			<br />
+			Cel.: +549 261 4547484
+			<br />
+			Skype: youncronopio
+			<br />
+			Mail: tato@federaldistribucion.com.ar
+		</address>
+		
+		<h3>PRENSA / PRESS-NEWS</h3>
+		
+		<address>
+			<strong>NÉSTOR MORENO</strong>
+			<br />
+			Cel.: +549 261 4547484
+			<br />
+			Skype: youncronopio
+			<br />
+			Mail: tato@federaldistribucion.com.ar
+		</address>
+
+		<h3>DISEÑO COMUNICACIÓN / DESIGN-COMUNICATION</h3>
+		
+		<address>
+			<strong>PEPE TOBAL</strong>
+			<br />
+			Cel.: +549 351 6824393
+			<br />
+			Skype: pepetobal
+			<br />
+			Mail: pepe@federaldistribucion.com.ar
+		</address>
 	</div>
 </div>
 <br>
