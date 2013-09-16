@@ -82,12 +82,12 @@ echo $this->Html->script(array('//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/
 					<div class="row">
 						<?php
 						echo $this->Form->input('entryId', array('class' => 'col-sm-12', 'ng-model' => 'entryId', 'div' => 'col-sm-12', 'label' => false
-							, 'placeholder' => 'Video ID', 'required', 'ng-init'=> 'entryId="'.$this->data['Track']['entryId'].'"'));
+							, 'placeholder' => 'Video ID', 'ng-init'=> 'entryId="'.$this->data['Track']['entryId'].'"'));
 						?>
 						<br />
 						<?php
 						echo $this->Form->input('portadaId', array('class' => 'col-sm-12', 'ng-model' => 'portadaId', 'div' => 'col-sm-12', 'label' => false
-							, 'placeholder' => 'Portada ID', 'required', 'ng-init'=> 'portadaId="'.$this->data['Track']['portadaId'].'"'));
+							, 'placeholder' => 'Portada ID', 'ng-init'=> 'portadaId="'.$this->data['Track']['portadaId'].'"'));
 						?>
 					</div>
 				</div>

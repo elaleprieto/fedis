@@ -85,7 +85,7 @@
 		<br />
 		<div class="row">
 			<div class="col-sm-10">
-				<?php echo $kUrlEmbed; ?>
+				<?php echo $kUrlEmbed ? $kUrlEmbed : '&nbsp;'; ?>
 			</div>
 		</div>
 		<div class="row">
@@ -249,11 +249,11 @@
 <?php
 if(isset($thumbs) && sizeof($thumbs) > 0):
 $thumb = $thumbs[0];
-try	{
-$thumb_url = $kClient->thumbAsset->serve($thumb->id);
-} catch(Exception $ex) {
+//try	{
+//$thumb_url = $kClient->thumbAsset->serve($thumb->id);
+//} catch(Exception $ex) {
 // echo KajooHelper::getKalturaError(JText::_('Fail on geting thumb info'));
-}
+//}
 ?>
 <li id="<?php echo $thumb->id;?>">
 <a href="<?php echo $thumb_url;?>.jpg" class="fancybox-button" rel="fancybox-button" title="">

@@ -49,7 +49,8 @@ class TracksController extends AppController {
 			$kUrlEmbed = $this->Kaltura->getUrlEmbed($entryId);
 			$thumbs = $this->Kaltura->getThumbs($entryId);
 		else:
-			$kUrlEmbed = '';
+			$kClient = null;
+			$kUrlEmbed = null;
 		endif;
 		
 		$this->set(compact('track', 'kClient', 'kUrlEmbed', 'thumbs'));
