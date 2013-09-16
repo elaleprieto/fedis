@@ -188,7 +188,7 @@ $cakeDescription = __d('cake_dev', 'Federal Distribuciones');
 				<div class="row">
 					<div class="col-sm-1 col-sm-offset-4">
 						<?php 
-						echo  $this->Html->image('logos/logo_federal.png'
+						echo  $this->Html->image('logos/federal.png'
 							, array('alt' => 'Federal Distribuciones', 'border' => '0', 'class'=>'img-responsive'));
 						?>
 					</div>
@@ -207,9 +207,9 @@ $cakeDescription = __d('cake_dev', 'Federal Distribuciones');
 		
 		<!-- Logo superior (3d) -->
 		<!-- <div class="col-sm-1 col-sm-offset-1 logo-superior">
-			<a href="/"><img src="/img/logo_federal.png" border="0" class="img-responsive" /></a> -->
+			<a href="/"><img src="/img/federal.png" border="0" class="img-responsive" /></a> -->
 				<?php 
-					// echo $this->Html->image('logo_federal.png'
+					// echo $this->Html->image('federal.png'
 						// , array('alt' => 'Federal Distribuciones', 'border' => '0', 'class'=>'img-responsive')
 					// );
 				?>

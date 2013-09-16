@@ -6,7 +6,7 @@ echo $this->Html->css(array('contacto', 'http://fonts.googleapis.com/css?family=
 <div class="row">
 	<div class="col-sm-3 col-sm-offset-1">
 		<div class="col-sm-12">
-			<a href="/"> <img class="img-responsive logo-superior" src="/img/logos/logo_federal.png" /> </a>
+			<a href="/"> <img class="img-responsive logo-superior" src="/img/logos/federal.png" /> </a>
 		</div>
 		<div class="col-sm-12">
 			<p>
