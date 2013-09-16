@@ -38,9 +38,8 @@
 						<?php
 						if($track['Track']['portadaId']):
 							// http://"YOURSERVER"/p/1/sp/100/thumbnail/entry_id/"ENTRYID"/width/"WIDTH"/height/"HEIGHT"
-							echo $this->Html->image('http://librekaltura.com.ar/p/1/sp/100/thumbnail/entry_id/' . $track['Track']['portadaId']
-								, array('class' => 'col-sm-12 img-responsive')
-							);
+							$url = 'http://librekaltura.com.ar/p/1/sp/100/thumbnail/entry_id/' . $track['Track']['portadaId'] . '/width/165';
+							echo $this->Html->image($url, array('class' => 'col-sm-12 img-responsive'));
 						else:
 							echo $this->Html->image('thumbs/noThumb.png'
 								, array('class' => 'col-sm-12 img-responsive')
