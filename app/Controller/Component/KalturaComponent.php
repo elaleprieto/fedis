@@ -145,7 +145,8 @@ class KalturaComponent extends Component {
 	
 	# LibreKaltura.com.ar	
 	// public function getUrlEmbed($partnerId = null, $entry_id = '0_i5u1lyhc', $configId = '11170242') {
-	public function getUrlEmbed($entry_id = '0_e0spw8jl', $partnerId = null, $configId = '11170242') {
+	// public function getUrlEmbed($entry_id = '0_e0spw8jl', $partnerId = null, $configId = '11170242') {
+	public function getUrlEmbed($entry_id = '0_e0spw8jl', $partnerId = null, $configId = '11170250') { // reproductor con nombre "escondido"
 		
 		if(!$partnerId)
 			$partnerId = $this->partnerId;
