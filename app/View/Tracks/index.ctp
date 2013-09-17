@@ -91,10 +91,21 @@
 		<td><?php echo h($track['Track']['modified']); ?>&nbsp;</td> -->
 		<td><?php echo h($track['Track']['entryId']); ?>&nbsp;</td>
 		<td><?php echo h($track['Track']['portadaId']); ?>&nbsp;</td>
-		<td class="actions col-sm-1">
+		<td class="actions col-sm-2">
 			<!-- <?php echo $this->Html->link(__('View'), array('action' => 'view', $track['Track']['id'])); ?> -->
-			<?php echo $this->Html->link(__('Editar'), Router::url('/editar/' . $track['Track']['id']), array('class'=>'btn btn-primary')); ?>
-			<!-- <?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $track['Track']['id']), null, __('Are you sure you want to delete # %s?', $track['Track']['id'])); ?> -->
+			<?php 
+			echo $this->Html->link(__('Editar')
+				, Router::url('/editar/' . $track['Track']['id'])
+				, array('class'=>'btn btn-primary')
+			);
+			?>
+			<?php 
+			echo $this->Form->postLink(__('Eliminar')
+				, array('action' => 'delete', $track['Track']['id'])
+				, array('class'=>'btn btn-primary')
+				, __('¿Estás seguro que quieres eliminar "%s"?', $track['Track']['title'])
+			);
+			?>
 		</td>
 	</tr>
 <?php endforeach; ?>

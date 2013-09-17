@@ -10,7 +10,7 @@ class TracksController extends AppController {
 
 	public function beforeFilter() {
         parent::beforeFilter();
-        $this -> Auth -> allow('add', 'edit', 'index', 'view', 'get');
+        $this -> Auth -> allow('add', 'delete', 'edit', 'get', 'index', 'view');
     }
 
 /**
