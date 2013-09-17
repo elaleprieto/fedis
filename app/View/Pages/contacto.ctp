@@ -31,7 +31,7 @@ echo $this->Html->css(array('contacto', 'http://fonts.googleapis.com/css?family=
 			<br />
 			Skype: orugadigital
 			<br />
-			Mail: paola@federaldistribucion.com.ar
+			Mail: <a href="mailto:paola@federaldistribucion.com.ar">paola@federaldistribucion.com.ar</a>
 		</address>
 		<address>
 			<strong>LARA DECUZZI</strong>
@@ -40,7 +40,7 @@ echo $this->Html->css(array('contacto', 'http://fonts.googleapis.com/css?family=
 			<br />
 			Skype: laradecuzzi
 			<br />
-			Mail: lara@federaldistribucion.com.ar
+			Mail: <a href="mailto:lara@federaldistribucion.com.ar">lara@federaldistribucion.com.ar</a>
 		</address>
 		<address>
 			<strong>PAULA KUSCHNIR</strong>
@@ -49,7 +49,7 @@ echo $this->Html->css(array('contacto', 'http://fonts.googleapis.com/css?family=
 			<br />
 			Skype: paulitakus
 			<br />
-			Mail: paula@federaldistribucion.com.ar
+			Mail: <a href="mailto:paula@federaldistribucion.com.ar">paula@federaldistribucion.com.ar</a>
 		</address>
 
 		<h3>COPRODUCCIONES / CO-PRODUCTIONS</h3>
@@ -61,7 +61,7 @@ echo $this->Html->css(array('contacto', 'http://fonts.googleapis.com/css?family=
 			<br />
 			Skype: pepetobal
 			<br />
-			Mail: pepe@federaldistribucion.com.ar
+			Mail: <a href="mailto:pepe@federaldistribucion.com.ar">pepe@federaldistribucion.com.ar</a>
 		</address>
 		<address>
 			<strong>NÉSTOR MORENO</strong>
@@ -70,7 +70,7 @@ echo $this->Html->css(array('contacto', 'http://fonts.googleapis.com/css?family=
 			<br />
 			Skype: youncronopio
 			<br />
-			Mail: tato@federaldistribucion.com.ar
+			Mail: <a href="mailto:tato@federaldistribucion.com.ar">tato@federaldistribucion.com.ar</a>
 		</address>
 		
 		<h3>PRENSA / PRESS-NEWS</h3>
@@ -82,7 +82,7 @@ echo $this->Html->css(array('contacto', 'http://fonts.googleapis.com/css?family=
 			<br />
 			Skype: youncronopio
 			<br />
-			Mail: tato@federaldistribucion.com.ar
+			Mail: <a href="mailto:tato@federaldistribucion.com.ar">tato@federaldistribucion.com.ar</a>
 		</address>
 
 		<h3>DISEÑO COMUNICACIÓN / DESIGN-COMUNICATION</h3>
@@ -94,7 +94,7 @@ echo $this->Html->css(array('contacto', 'http://fonts.googleapis.com/css?family=
 			<br />
 			Skype: pepetobal
 			<br />
-			Mail: pepe@federaldistribucion.com.ar
+			Mail: <a href="mailto:pepe@federaldistribucion.com.ar">pepe@federaldistribucion.com.ar</a>
 		</address>
 	</div>
 </div>
