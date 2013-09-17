@@ -41,7 +41,7 @@ echo $this->Html->css('categories/view', null, array('inline' => false));
 								<a href="/tracks/view/<?php echo $track['id']; ?>">
 									<div class="col-sm-6">
 										<?php
-										$url = 'http://librekaltura.com.ar/p/1/sp/100/thumbnail/entry_id/' . $track['entryId'] . '/width/135/height/85';
+										$url = 'http://librekaltura.com.ar/p/1/sp/100/thumbnail/entry_id/' . $track['entryId'] . '/width/135/height/86';
 										echo $this->Html->image($url, array('class' => 'col-sm-12 img-responsive'));
 										// debug($kClient->getFirstThumb($track['entryId']));
 										// if($track['portadaId']):
