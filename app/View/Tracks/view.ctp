@@ -3,9 +3,7 @@
 <div class="row">
 	<div class="col-sm-3 col-sm-offset-1">
 		<div class="col-sm-12">
-			<a href="/">
-				<img class="img-responsive logo-superior" src="/img/logos/federal.png" />
-			</a>
+			<a href="/"> <img class="img-responsive logo-superior" src="/img/logos/federal.png" /> </a>
 		</div>
 		<div class="col-sm-12">
 			<p>
@@ -22,12 +20,9 @@
 	<div class="col-sm-8">
 		<div class="row">
 			<div class="col-sm-10 col-sm-offset-1 text-right">
-				<h4 class="category">
-					[ <?php echo strtolower($track['Category'][0]['title']); ?> ]
-				</h4>
+				<h4 class="category"> [ <?php echo strtolower($track['Category'][0]['title']); ?> ] </h4>
 			</div>
 		</div>
-		
 
 		<!-- detalles del track -->
 		<div class="row">
@@ -36,21 +31,18 @@
 					<div class="col-sm-3">
 						<!-- <img class="img-responsive" src="/img/thumbs/afiche.png" /> -->
 						<?php
-						if($track['Track']['portadaId']):
+						if ($track['Track']['portadaId']) :
 							// http://"YOURSERVER"/p/1/sp/100/thumbnail/entry_id/"ENTRYID"/width/"WIDTH"/height/"HEIGHT"
 							$url = 'http://librekaltura.com.ar/p/1/sp/100/thumbnail/entry_id/' . $track['Track']['portadaId'] . '/width/165';
 							echo $this->Html->image($url, array('class' => 'col-sm-12 img-responsive'));
-						else:
-							echo $this->Html->image('thumbs/noThumb.png'
-								, array('class' => 'col-sm-12 img-responsive')
-							);
+						else :
+							echo $this->Html->image('thumbs/noThumb.png', array('class' => 'col-sm-12 img-responsive'));
 						endif;
 						?>
 					</div>
 					<div class="col-sm-9">
 						<div class="row">
-							<h3>
-								<?php echo $track['Track']['title'] ?>
+							<h3> <?php echo $track['Track']['title'] ?>
 							</h3>
 						</div>
 						<div class="row">
@@ -77,7 +69,7 @@
 						<div class="row">
 							<strong>Teléfono:</strong> <?php echo $track['Track']['telefono'] ?>
 						</div>
-		
+
 					</div>
 				</div>
 			</div>
@@ -88,13 +80,54 @@
 				<?php echo $kUrlEmbed ? $kUrlEmbed : '&nbsp;'; ?>
 			</div>
 		</div>
+		<!-- <div class="row">
+		<div class="col-sm-10">
+		<hr />
+		<p>
+		<strong>SINOPSIS</strong>
+		</p>
+		</div>
+		<div class="col-sm-10">
+		<?php echo $track['Track']['sinopsis_es'] ?>
+		</div>
+		</div> -->
 		<div class="row">
 			<div class="col-sm-10">
-				<hr />
-				<p><strong>SINOPSIS</strong></p>
-			</div>
-			<div class="col-sm-10">
-				<?php echo $track['Track']['sinopsis_es'] ?>
+				<ul class="nav nav-tabs" id="myTab">
+					<li class="active">
+						<a href="#sinopsis" data-toggle="tab">SINOPSIS</a>
+					</li>
+					
+					<?php if($track['Track']['sinopsis_en']): ?>
+					<li>
+						<a href="#synopsis" data-toggle="tab">SYNOPSIS</a>
+					</li>
+					<?php endif; ?>
+
+					<?php if($track['Track']['sinopsis_po']): ?>
+					<li>
+						<a href="#sinopse" data-toggle="tab">SINOPSE</a>
+					</li>
+					<?php endif; ?>
+				</ul>
+
+				<div class="tab-content">
+					<div class="tab-pane active" id="sinopsis">
+						<?php echo $track['Track']['sinopsis_es'] ?>
+					</div>
+
+					<?php if($track['Track']['sinopsis_en']): ?>
+					<div class="tab-pane" id="synopsis">
+						<?php echo $track['Track']['sinopsis_en'] ?>
+					</div>
+					<?php endif; ?>
+
+					<?php if($track['Track']['sinopsis_po']): ?>
+					<div class="tab-pane" id="sinopse">
+						<?php echo $track['Track']['sinopsis_po'] ?>
+					</div>
+					<?php endif; ?>
+				</div>
 			</div>
 		</div>
 	</div>
