@@ -10,7 +10,7 @@ class TracksController extends AppController {
 
 	public function beforeFilter() {
         parent::beforeFilter();
-        $this -> Auth -> allow('add', 'delete', 'edit', 'get', 'index', 'view');
+        $this -> Auth -> allow('add', 'delete', 'edit', 'get', 'index', 'search', 'view');
     }
 
 /**
@@ -236,5 +236,36 @@ class TracksController extends AppController {
 		return $this->Track->find('all', $options);
 	}
 	
+/**
+ * search method: accedido desde la navbar
+ *
+ * @param string $cantidad, $categoria
+ * @return void
+ */
+	public function search($query = null) {
+		if($query || $query = $this->request->data['query']) {
+			$options['joins'] = array(
+			    array('table' => 'tags_tracks',
+			        'alias' => 'TagsTrack',
+			        'type' => 'inner',
+			        'conditions' => array(
+			            'Track.id = TagsTrack.track_id'
+			        )
+			    ),
+			    array('table' => 'tags',
+			        'alias' => 'Tag',
+			        'type' => 'inner',
+			        'conditions' => array(
+			            'TagsTrack.tag_id = Tag.id'
+			        )
+			    )
+			);
+			
+			$this->request->data['query'] = $query;
+			$options['conditions'] = array('Tag.title LIKE' => "%$query%");
+			$this->set('tracks', $this->Track->find('all', $options));
+			
+		}
+	}
 	
 }

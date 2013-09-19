@@ -53,16 +53,27 @@ $cakeDescription = __d('cake_dev', 'Federal Distribuciones');
 			    <ul class="nav navbar-nav  col-sm-12 text-center">
 	
 			        <!-- Redes Sociales -->
-			        <li class="col-sm-12 text-center">
+			        <li class="col-sm-5 col-sm-offset-1 text-center">
 			        	<form class="navbar-form text-center" role="search">
 							<i class="icon-facebook-sign icon-2x"></i>
 				        	<i class="icon-twitter-sign icon-2x"></i>
 			    		</form>
 			        </li>
+					<li class="col-sm-5">
+						<form action="/tracks/search" method="post" name="search" class="form-inline" role="search">
+							<div class="form-group">
+							<?php
+							echo $this->Form->input('query'
+								, array('class' => 'form-control', 'label' => false, 'placeholder' => 'buscar...')
+							);
+							?>
+							</div>
+						</form>
+					</li> 
 			    </ul>
 				
 				<!-- MENU 2 :: Categorías -->
-				<div>
+				<div class="nav-categorias">
 				    <div class="col-sm-12">
 				        <div class="categories-menu text-center">
 			                <span>

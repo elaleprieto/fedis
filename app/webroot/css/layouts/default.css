@@ -78,20 +78,26 @@ h3 > a, h5 > a {
 }
 
 /* line 67, ../../sass/layouts/default.sass */
+.nav-categorias {
+  position: relative;
+  z-index: -1;
+}
+
+/* line 71, ../../sass/layouts/default.sass */
 .nav-tabs {
   font-weight: bold;
 }
-/* line 70, ../../sass/layouts/default.sass */
+/* line 74, ../../sass/layouts/default.sass */
 .nav-tabs > li > a:hover {
   background-color: #fd8d46;
 }
 
-/* line 73, ../../sass/layouts/default.sass */
+/* line 77, ../../sass/layouts/default.sass */
 .navbar-form {
   margin: 4px;
 }
 
-/* line 79, ../../sass/layouts/default.sass */
+/* line 83, ../../sass/layouts/default.sass */
 .navbar-top {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #994717), color-stop(100%, #fd8d46));
   background-image: -webkit-linear-gradient(#994717, #fd8d46);
@@ -109,7 +115,7 @@ h3 > a, h5 > a {
   border-bottom-left-radius: 70%;
 }
 
-/* line 91, ../../sass/layouts/default.sass */
+/* line 95, ../../sass/layouts/default.sass */
 .navbar-out {
   background-color: #2775fc;
   border-bottom-color: #2775fc;
