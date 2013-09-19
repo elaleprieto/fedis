@@ -200,9 +200,10 @@ class TracksController extends AppController {
  * get method: usado por Inicio para desplegar videos
  *
  * @param string $cantidad, $categoria
+ * @param array excluded: ids de los excluidos
  * @return void
  */
-	public function get($cantidad = null, $categoria = null) {
+	public function get($cantidad = null, $categoria = null, $excluded = null) {
 		if (!$cantidad || !$categoria) {
 			throw new NotFoundException(__('Invalid track'));
 		}
@@ -229,7 +230,21 @@ class TracksController extends AppController {
 		    )
 		);
 		
-		$options['conditions'] = array('Category.id' => $categoria_id);
+		$options['conditions'] = array('Category.id' => $categoria_id
+			, 'Track.habilitado' => true
+		);
+		
+		# Se excluyen algunos videos para no repetirlos en el listado
+		if($excluded):
+			$excluded = explode('-', $excluded);
+			foreach($excluded as $key => $val)
+				if(empty($val))
+					unset($excluded[$key]);
+			$options['conditions'] = array_merge($options['conditions']
+				, array('NOT' => array('Track.id' => $excluded))
+			);
+		endif;
+		
 		$options['limit'] = $cantidad;
 		$options['order'] = 'RAND()';
 		
