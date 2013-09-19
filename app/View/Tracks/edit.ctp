@@ -2,7 +2,7 @@
 echo $this->Html->css('tracks/add');
 echo $this->Html->script(array('//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js', 'angular/controllers'));
 ?>
-<div ng-app="App" ng-controller="TracksController">
+<div id="inicio" ng-app="App" ng-controller="TracksController">
 	<div class="row">
 		<div class="col-sm-12">
 			<a href="/listado" class="btn btn-primary pull-right">
@@ -80,14 +80,33 @@ echo $this->Html->script(array('//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/
 				?>
 				<div class="col-sm-4">
 					<div class="row">
+						<div class="col-sm-6">
+							<div class="row">
+								<?php
+								echo $this->Form->input('entryId', array('class' => 'col-sm-12', 'ng-model' => 'entryId', 'div' => 'col-sm-12', 'label' => false
+									, 'placeholder' => 'Video ID', 'ng-init'=> 'entryId="'.$this->data['Track']['entryId'].'"'));
+								?>
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<a href="#videos" class="btn btn-primary pull-right">Videos &darr;</a>
+						</div>
+						<div>&nbsp;</div>
+						<div class="col-sm-6">
+							<div class="row">
+								<?php
+								echo $this->Form->input('portadaId', array('class' => 'col-sm-12', 'ng-model' => 'portadaId', 'div' => 'col-sm-12', 'label' => false
+									, 'placeholder' => 'Portada ID', 'ng-init'=> 'portadaId="'.$this->data['Track']['portadaId'].'"'));
+								?>
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<a href="#imagenes" class="btn btn-primary pull-right">Imágenes &darr;</a>
+						</div>
+					</div>
+					<div class="row">
 						<?php
-						echo $this->Form->input('entryId', array('class' => 'col-sm-12', 'ng-model' => 'entryId', 'div' => 'col-sm-12', 'label' => false
-							, 'placeholder' => 'Video ID', 'ng-init'=> 'entryId="'.$this->data['Track']['entryId'].'"'));
-						?>
-						<br />
-						<?php
-						echo $this->Form->input('portadaId', array('class' => 'col-sm-12', 'ng-model' => 'portadaId', 'div' => 'col-sm-12', 'label' => false
-							, 'placeholder' => 'Portada ID', 'ng-init'=> 'portadaId="'.$this->data['Track']['portadaId'].'"'));
+						echo $this->Form->input('habilitado', array('div' => 'col-sm-12'));
 						?>
 					</div>
 				</div>
@@ -101,7 +120,7 @@ echo $this->Html->script(array('//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/
 		</div>
 	</div>
 	<div class="row">
-		<h2 class="text-center">Videos cargados</h2>
+		<h2 class="text-center" id="videos">Videos cargados</h2>
 	</div>
 	<div class="row">
 		<table class="table">
@@ -116,17 +135,18 @@ echo $this->Html->script(array('//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/
 				<tr ng-class="{highlight:media == selectedVideo}" ng-repeat="media in getMedias()">
 					<td ng-bind="media.id"></td>
 					<td ng-bind="media.name"></td>
-					<td class="col-sm-1">
-						<button ng-click="selectVideo(media)">
+					<td class="col-sm-2">
+						<button class="btn btn-default" ng-click="selectVideo(media)">
 							Seleccionar
 						</button>
+						<a href="#inicio" class="btn btn-primary pull-right">Inicio &uarr;</a>
 					</td>
 				</tr>
 			</tbody>
 		</table>
 	</div>
 	<div class="row">
-		<h2 class="text-center">Imágenes cargadas</h2>
+		<h2 class="text-center" id="imagenes">Imágenes cargadas</h2>
 	</div>
 	<div class="row">
 		<table class="table">
@@ -141,10 +161,11 @@ echo $this->Html->script(array('//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/
 				<tr ng-class="{highlight:imagen == selectedImagen}" ng-repeat="imagen in getImagenes()">
 					<td ng-bind="imagen.id"></td>
 					<td ng-bind="imagen.name"></td>
-					<td class="col-sm-1">
-						<button ng-click="selectImagen(imagen)">
+					<td class="col-sm-2">
+						<button class="btn btn-default" ng-click="selectImagen(imagen)">
 							Seleccionar
 						</button>
+						<a href="#inicio" class="btn btn-primary pull-right">Inicio &uarr;</a>
 					</td>
 				</tr>
 			</tbody>

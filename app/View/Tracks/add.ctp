@@ -110,6 +110,11 @@ echo $this->Html->script(array('//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/
 							<a href="#imagenes" class="btn btn-primary pull-right">Imágenes &darr;</a>
 						</div>
 					</div>
+					<div class="row">
+						<?php
+						echo $this->Form->input('habilitado', array('div' => 'col-sm-12'));
+						?>
+					</div>
 				</div>
 			</div>
 			<div class="row">
