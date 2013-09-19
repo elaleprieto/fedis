@@ -60,7 +60,7 @@ $cakeDescription = __d('cake_dev', 'Federal Distribuciones');
 			    		</form>
 			        </li>
 					<li class="col-sm-5">
-						<form action="/tracks/search" method="post" name="search" class="form-inline" role="search">
+						<form action="/buscar" method="post" name="search" class="form-inline" role="search">
 							<div class="form-group">
 							<?php
 							echo $this->Form->input('query'
