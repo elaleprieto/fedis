@@ -259,29 +259,41 @@ class TracksController extends AppController {
  */
 	public function search($query = null) {
 		if($query || $query = $this->request->data['query']) {
-			$options['joins'] = array(
-			    array('table' => 'tags_tracks',
-			        'alias' => 'TagsTrack',
-			        'type' => 'left',
-			        'conditions' => array(
-			            'Track.id = TagsTrack.track_id'
-			        )
-			    ),
-			    array('table' => 'tags',
-			        'alias' => 'Tag',
-			        'type' => 'left',
-			        'conditions' => array(
-			            'TagsTrack.tag_id = Tag.id'
-			        )
+			$options['joins'] = array(array('table' => 'tags_tracks'
+					, 'alias' => 'TagsTrack'
+					, 'type' => 'left'
+					, 'conditions' => array('Track.id = TagsTrack.track_id')
+			    )
+			    , array('table' => 'tags'
+			    	, 'alias' => 'Tag'
+			    	, 'type' => 'left'
+			    	, 'conditions' => array('TagsTrack.tag_id = Tag.id')
+			    )
+				, array('table' => 'categories_tracks'
+					, 'alias' => 'CategoriesTrack'
+					, 'type' => 'inner'
+					, 'conditions' => array('Track.id = CategoriesTrack.track_id')
+			    )
+			    , array('table' => 'categories'
+			    	, 'alias' => 'Category'
+			    	, 'type' => 'inner'
+			    	, 'conditions' => array('CategoriesTrack.category_id = Category.id')
 			    )
 			);
 			
-			$this->request->data['query'] = strtolower($query);
-			$options['conditions'] = array('OR' => array('lower(Tag.title) LIKE' => "%$query%"
-				 , 'lower(Track.title) LIKE' => "%$query%"
-				 // 'Track.title LIKE' => "%$query%"
-				)
-			);
+			$this->request->data['query'] = $query;
+			$query = strtolower($query);
+			$query = explode(' ', $query);
+			
+			$orConditions = array();
+			foreach ($query as $queryString):
+				array_push($orConditions, array('lower(Category.name) LIKE' => "%$queryString%"));
+				array_push($orConditions, array('lower(Tag.title) LIKE' => "%$queryString%"));
+				array_push($orConditions, array('lower(Track.presentacion) LIKE' => "%$queryString%"));
+				array_push($orConditions, array('lower(Track.title) LIKE' => "%$queryString%"));
+			endforeach;
+			
+			$options['conditions'] = array('OR' => $orConditions);
 			$options['group'] = array('Track.id');
 			
 			$this->set('tracks', $this->Track->find('all', $options));
