@@ -276,10 +276,9 @@ class TracksController extends AppController {
 			    )
 			);
 			
-			$this->request->data['query'] = $query;
-			$options['conditions'] = array('OR' => array(
-				'Tag.title LIKE' => "%$query%"
-				 , 'Track.title LIKE' => "%$query%"
+			$this->request->data['query'] = strtolower($query);
+			$options['conditions'] = array('OR' => array('lower(Tag.title) LIKE' => "%$query%"
+				 , 'lower(Track.title) LIKE' => "%$query%"
 				 // 'Track.title LIKE' => "%$query%"
 				)
 			);
