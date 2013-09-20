@@ -262,14 +262,14 @@ class TracksController extends AppController {
 			$options['joins'] = array(
 			    array('table' => 'tags_tracks',
 			        'alias' => 'TagsTrack',
-			        'type' => 'inner',
+			        'type' => 'left',
 			        'conditions' => array(
 			            'Track.id = TagsTrack.track_id'
 			        )
 			    ),
 			    array('table' => 'tags',
 			        'alias' => 'Tag',
-			        'type' => 'inner',
+			        'type' => 'left',
 			        'conditions' => array(
 			            'TagsTrack.tag_id = Tag.id'
 			        )
@@ -277,7 +277,14 @@ class TracksController extends AppController {
 			);
 			
 			$this->request->data['query'] = $query;
-			$options['conditions'] = array('Tag.title LIKE' => "%$query%");
+			$options['conditions'] = array('OR' => array(
+				'Tag.title LIKE' => "%$query%"
+				 , 'Track.title LIKE' => "%$query%"
+				 // 'Track.title LIKE' => "%$query%"
+				)
+			);
+			$options['group'] = array('Track.id');
+			
 			$this->set('tracks', $this->Track->find('all', $options));
 			
 		}
