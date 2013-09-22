@@ -98,7 +98,7 @@ $cakeDescription = __d('cake_dev', 'Federal Distribuciones');
 			                    <a href="/contacto">contacto</a>
 			                </span>
 			                <span>
-			                    <a href="http://200.110.135.125/~federal/site" target="_blank">Inscripción</a>
+			                    <a href="http://200.110.135.125/~fede/site" target="_blank">Inscripción</a>
 			                </span>
 				        </div>
 				    </div>
@@ -189,7 +189,7 @@ $cakeDescription = __d('cake_dev', 'Federal Distribuciones');
 			                    <a href="/contacto">contacto</a>
 			                </span>
 			                <span>
-			                    <a href="http://200.110.135.125/~federal/site" target="_blank">Inscripción</a>
+			                    <a href="http://200.110.135.125/~fede/site" target="_blank">Inscripción</a>
 			                </span>
 				        </div>
 				    </div>
