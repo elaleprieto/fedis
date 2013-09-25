@@ -111,6 +111,7 @@ $cakeDescription = __d('cake_dev', 'Federal Distribuciones');
 		
 			<!-- footer -->
 			<footer class="row">
+				
 				<!-- Logos de auspiciantes -->
 				<div class="row auspiciantes">
 					<div class="col-sm-1 col-sm-offset-4 text-center">
@@ -119,13 +120,18 @@ $cakeDescription = __d('cake_dev', 'Federal Distribuciones');
 							, array('alt' => 'INCAA', 'border' => '0', 'class' => 'img-responsive'));
 						?>
 					</div>
-					<div class="col-sm-2 text-center">
-						<?php 
-						echo  $this->Html->image('logos/Ausp-TDA-120.png'
-							, array('alt' => 'tda', 'border' => '0'));
-						?>
-					</div>
-					<div class="col-sm-2 text-center">
+					<!-- Descomentar si se quiere el logo de TDA de vuelta -->
+					<!-- ojo con el col-sm-2 que también se comenta -->
+					<!-- 
+						<div class="col-sm-2 text-center">
+							<?php 
+							// echo  $this->Html->image('logos/Ausp-TDA-120.png'
+							//	, array('alt' => 'tda', 'border' => '0'));
+							?>
+						</div> 
+						<div class="col-sm-2 text-center">
+					-->
+					<div class="col-sm-2 col-sm-offset-2 text-center">
 						<?php 
 						echo  $this->Html->image('logos/argentinaPaisDeHonor.png'
 							, array('alt' => 'Argentina, país de honor', 'border' => '0', 'class'=>'img-responsive'));
