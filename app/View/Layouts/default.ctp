@@ -210,12 +210,13 @@ $cakeDescription = __d('cake_dev', 'Federal Distribuciones');
 						?>
 					</div>
 					<div class="col-sm-3">
-						<p>
-							Av. 9 de Julio 2356 - Of. 456
+						<p class="text-center">
+							<!-- Av. 9 de Julio 2356 - Of. 456
 							<br />
-							Tel 011 - 45666968 / 45664687
+							Tel 011 - 45666968 / 45664687 -->
+							Argentina
 							<br />
-							federaldistribuciones@gmail.com
+							<a href="federaldistribuciones@gmail.com">federaldistribuciones@gmail.com</a>
 						</p>
 					</div>
 				</div>
