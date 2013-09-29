@@ -10,7 +10,7 @@ class TracksController extends AppController {
 
 	public function beforeFilter() {
         parent::beforeFilter();
-        $this -> Auth -> allow('add', 'delete', 'edit', 'get', 'index', 'search', 'view');
+        $this -> Auth -> allow('add', 'delete', 'edit', 'get', 'index', 'search', 'view', 'getReel');
     }
 
 /**
@@ -299,6 +299,11 @@ class TracksController extends AppController {
 			$this->set('tracks', $this->Track->find('all', $options));
 			
 		}
+	}
+
+	public function getReel() {
+		$entryId = '0_8b7yv0du';
+		return $kUrlEmbed = $this->Kaltura->getUrlEmbed($entryId);
 	}
 	
 }
