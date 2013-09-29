@@ -216,7 +216,7 @@ $cakeDescription = __d('cake_dev', 'Federal Distribuciones');
 							Tel 011 - 45666968 / 45664687 -->
 							Argentina
 							<br />
-							<a href="federaldistribuciones@gmail.com">federaldistribuciones@gmail.com</a>
+							<a href="info@federaldistribucion.com.ar">info@federaldistribucion.com.ar</a>
 						</p>
 					</div>
 				</div>
