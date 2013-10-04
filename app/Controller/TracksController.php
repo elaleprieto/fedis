@@ -302,7 +302,8 @@ class TracksController extends AppController {
 	}
 
 	public function getReel() {
-		$entryId = '0_8b7yv0du';
+		// $entryId = '0_8b7yv0du'; # Reel 1
+		$entryId = '0_r5ion5nd'; # Reel 2
 		return $kUrlEmbed = $this->Kaltura->getUrlEmbed($entryId, null, '11170252');
 	}
 	

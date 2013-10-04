@@ -56,7 +56,7 @@ $cakeDescription = __d('cake_dev', 'Federal Distribuciones');
 			        <li class="col-sm-5 col-sm-offset-1 text-center">
 			        	<form class="navbar-form text-center" role="search">
 							<i class="icon-facebook-sign icon-2x"></i>
-				        	<i class="icon-twitter-sign icon-2x"></i>
+				        	<!-- <i class="icon-twitter-sign icon-2x"></i> -->
 			    		</form>
 			        </li>
 					<li class="col-sm-5">
