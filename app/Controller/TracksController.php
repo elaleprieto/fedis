@@ -283,15 +283,21 @@ class TracksController extends AppController {
 			
 			$this->request->data['query'] = $query;
 			$query = strtolower($query);
-			$query = explode(' ', $query);
+			// $query = explode(' ', $query); # Se saca porque quieren buscar frases completas
 			
 			$orConditions = array();
-			foreach ($query as $queryString):
-				array_push($orConditions, array('lower(Category.name) LIKE' => "%$queryString%"));
-				array_push($orConditions, array('lower(Tag.title) LIKE' => "%$queryString%"));
-				array_push($orConditions, array('lower(Track.presentacion) LIKE' => "%$queryString%"));
-				array_push($orConditions, array('lower(Track.title) LIKE' => "%$queryString%"));
-			endforeach;
+			
+			# Se agregan estas restricciones porque quieren buscar solo en el titulo y en etiquetas
+			array_push($orConditions, array('lower(Tag.title) LIKE' => "%$query%"));
+			array_push($orConditions, array('lower(Track.title) LIKE' => "%$query%"));
+			
+			# Se eliminan estas restricciones porque quieren buscar solo en el titulo y en etiquetas
+			// foreach ($query as $queryString):
+				// array_push($orConditions, array('lower(Tag.title) LIKE' => "%$queryString%"));
+				// array_push($orConditions, array('lower(Track.title) LIKE' => "%$queryString%"));
+				// array_push($orConditions, array('lower(Category.name) LIKE' => "%$queryString%"));
+				// array_push($orConditions, array('lower(Track.presentacion) LIKE' => "%$queryString%"));
+			// endforeach;
 			
 			$options['conditions'] = array('OR' => $orConditions);
 			$options['group'] = array('Track.id');
@@ -302,7 +308,8 @@ class TracksController extends AppController {
 	}
 
 	public function getReel() {
-		$entryId = '0_8b7yv0du';
+		// $entryId = '0_8b7yv0du'; # Reel 1
+		$entryId = '0_r5ion5nd'; # Reel 2
 		return $kUrlEmbed = $this->Kaltura->getUrlEmbed($entryId, null, '11170252');
 	}
 	

@@ -58,7 +58,7 @@ $cakeDescription = __d('cake_dev', 'Federal Distribuciones');
 							<a href="https://www.facebook.com/federaldistribucion" class="no-decoration" target="_blank">
 								<i class="icon-facebook-sign icon-2x"></i>
 							</a>
-				        	<i class="icon-twitter-sign icon-2x"></i>
+				        	<!-- <i class="icon-twitter-sign icon-2x"></i> -->
 			    		</form>
 			        </li>
 					<li class="col-sm-5">
