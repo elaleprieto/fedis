@@ -137,6 +137,43 @@ class KalturaComponent extends Component {
 		endif;
 	}
 
+	public function getUploadFlashVars() {
+		// define("KALTURA_PARTNER_ID", "106");
+		$partnerId = $this->partnerId;
+		
+		// define("KALTURA_PARTNER_SERVICE_SECRET", "9d964723786318b4cd579f9b53d2e7e5");
+		$adminSecret = $this->adminSecret;
+		// define("KALTURA_PARTNER_ID", "1483331");
+		// define("KALTURA_PARTNER_SERVICE_SECRET", "1570499fc0443031b5e73b67c4730200");
+		 
+		//define session variables
+		// $partnerUserID = 'ANONYMOUS';
+		$partnerUserID = 'ANONYMOUS';
+		$userId = $this->userId;
+		$sessionType = KalturaSessionType::USER; 
+		
+		//construct Kaltura objects for session initiation
+		$config = new KalturaConfiguration($partnerId);
+		$config->serviceUrl = $this->url;
+		$client = new KalturaClient($config);
+		// $ks = $client->session->start(KALTURA_PARTNER_SERVICE_SECRET, $partnerUserID, KalturaSessionType::USER);
+		$ks = $client->generateSession($adminSecret, $userId, $sessionType, $partnerId);
+		$configId = '11170250';
+		$uiConf = $client->uiConf->get($configId);
+		 
+		//Prepare variables to be passed to embedded flash object.
+		$flashVars = array();
+		$flashVars["uid"] = $partnerUserID;
+		$flashVars["partnerId"] = $partnerId;
+		$flashVars["ks"] = $ks;
+		$flashVars["afterAddEntry"] = "onContributionWizardAfterAddEntry";
+		$flashVars["close"] = "onContributionWizardClose";
+		$flashVars["showCloseButton"] = false;
+		$flashVars["Permissions"] = 1;
+		
+		return $flashVars;
+	}
+
 
 	// public function getUrlEmbed($partnerId, $entry_id, $configId) {
 			

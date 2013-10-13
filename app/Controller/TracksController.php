@@ -10,7 +10,7 @@ class TracksController extends AppController {
 
 	public function beforeFilter() {
         parent::beforeFilter();
-        $this -> Auth -> allow('add', 'delete', 'edit', 'get', 'index', 'search', 'view', 'getReel');
+        $this -> Auth -> allow('add', 'delete', 'edit', 'get', 'index', 'search', 'view', 'getReel', 'create');
     }
 
 /**
@@ -110,6 +110,65 @@ class TracksController extends AppController {
 		$addedList = $this->Track->find('all', array('fields'=>'entryId')); # videos ya linkeados
 		
 		$this->set(compact('addedList', 'categories', 'kalturaList', 'kalturaImagenList', 'tags'));
+	}
+
+/**
+ * add method
+ *
+ * @return void
+ */
+	public function create() {
+		// if ($this->request->is('post')) {
+			// $track = $this->request->data;
+			// $track['Track']['titulo'] = $track['Track']['title'];
+			// $this->Track->create();
+			// if ($this->Track->save($track)) {
+				// $this->Session->setFlash(__('The track has been saved'));
+				// // return $this->redirect(array('action' => 'add'));
+			// } else {
+				// $this->Session->setFlash(__('The track could not be saved. Please, try again.'));
+			// }
+		// }
+// 		
+
+		$this->set('flashVars', $this->Kaltura->getUploadFlashVars());
+
+		// $categories = $this->Track->Category->find('list');
+		// $tags = $this->Track->Tag->find('list');
+// 		
+		// $kClient = $this->Kaltura->getKalturaClient();
+// 		
+		// ###########
+		// # Videos
+		// ###########
+		// # Filtro
+		// $filter = new KalturaMediaEntryFilter();
+		// $filter->mediaTypeEqual = 1; //only sync videos
+		// # Paginacion
+		// $pager = new KalturaFilterPager();
+		// $pager->pageSize = 1000;
+		// $pager->pageIndex = 1;
+		// # Listar
+		// $kalturaList = $kClient->media->listAction($filter, $pager); # videos en el servidor de Kaltura
+// 		
+		// ###########
+		// # Imagenes
+		// ###########
+		// # Filtro
+		// $filter = new KalturaMediaEntryFilter();
+		// $filter->mediaTypeEqual = 2; //only sync imagenes
+		// # Paginacion
+		// $pager = new KalturaFilterPager();
+		// $pager->pageSize = 1000;
+		// $pager->pageIndex = 1;
+		// # Listar
+		// $kalturaImagenList = $kClient->media->listAction($filter, $pager); # videos en el servidor de Kaltura
+// 
+// 		
+		// $this->Track->recursive = -1;
+		// $addedList = $this->Track->find('all', array('fields'=>'entryId')); # videos ya linkeados
+// 		
+		// $this->set(compact('addedList', 'categories', 'kalturaList', 'kalturaImagenList', 'tags'));
 	}
 
 /**
