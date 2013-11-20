@@ -158,7 +158,9 @@ class KalturaComponent extends Component {
 		$client = new KalturaClient($config);
 		// $ks = $client->session->start(KALTURA_PARTNER_SERVICE_SECRET, $partnerUserID, KalturaSessionType::USER);
 		$ks = $client->generateSession($adminSecret, $userId, $sessionType, $partnerId);
-		$configId = '11170250';
+		// $configId = '11170250';
+		// $configId = '11170265';
+		$configId = '11170253';
 		$uiConf = $client->uiConf->get($configId);
 		 
 		//Prepare variables to be passed to embedded flash object.
