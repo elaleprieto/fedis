@@ -129,8 +129,9 @@ echo $this->Html->script(array('//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/
 	</div>
 </div>
 
-
-<div id="kcw"></div>
+<div class="row text-center">
+	<div id="kcw"></div>
+</div>
 <script type="text/javascript">
 	var params = {
 	        allowScriptAccess: "always",
