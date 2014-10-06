@@ -21,9 +21,7 @@ echo $this->Html->css(array('contacto', 'http://fonts.googleapis.com/css?family=
 		</div>
 	</div>
 	<div class="col-sm-7 datos">
-		
-		<h3> VENTAS / SALES </h3>
-		
+		<h3 class="subtitulo">VENTAS / SALES - COPRODUCCIONES / CO-PRODUCTIONS</h3>
 		<address>
 			<strong>PAOLA SUAREZ</strong>
 			<br />
@@ -50,51 +48,6 @@ echo $this->Html->css(array('contacto', 'http://fonts.googleapis.com/css?family=
 			Skype: paulitakus
 			<br />
 			Mail: <a href="mailto:paula@federaldistribucion.com.ar">paula@federaldistribucion.com.ar</a>
-		</address>
-
-		<h3>COPRODUCCIONES / CO-PRODUCTIONS</h3>
-
-		<address>
-			<strong>PEPE TOBAL</strong>
-			<br />
-			Cel.: +549 351 6824393
-			<br />
-			Skype: pepetobal
-			<br />
-			Mail: <a href="mailto:pepe@federaldistribucion.com.ar">pepe@federaldistribucion.com.ar</a>
-		</address>
-		<address>
-			<strong>NÉSTOR MORENO</strong>
-			<br />
-			Cel.: +549 261 4547484
-			<br />
-			Skype: youncronopio
-			<br />
-			Mail: <a href="mailto:tato@federaldistribucion.com.ar">tato@federaldistribucion.com.ar</a>
-		</address>
-		
-		<h3>PRENSA / PRESS-NEWS</h3>
-		
-		<address>
-			<strong>NÉSTOR MORENO</strong>
-			<br />
-			Cel.: +549 261 4547484
-			<br />
-			Skype: youncronopio
-			<br />
-			Mail: <a href="mailto:tato@federaldistribucion.com.ar">tato@federaldistribucion.com.ar</a>
-		</address>
-
-		<h3>DISEÑO COMUNICACIÓN / DESIGN-COMUNICATION</h3>
-		
-		<address>
-			<strong>PEPE TOBAL</strong>
-			<br />
-			Cel.: +549 351 6824393
-			<br />
-			Skype: pepetobal
-			<br />
-			Mail: <a href="mailto:pepe@federaldistribucion.com.ar">pepe@federaldistribucion.com.ar</a>
 		</address>
 	</div>
 </div>
